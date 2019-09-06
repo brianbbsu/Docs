@@ -1,4 +1,9 @@
 # Table of contents
 
-* [Initial page](README.md)
+* [Jupiter](README.md)
+* [Installation](installation/README.md)
+  * [Linux](installation/linux.md)
+  * [macOS](installation/macos.md)
+  * [Windows](installation/windows.md)
+* [License](license.md)
 
