@@ -1,7 +1,6 @@
 # Table of contents
 
 * [Jupiter](README.md)
-* [Instrucciones](instructions.md)
 
 ## Installation
 
@@ -14,4 +13,5 @@
 * [Utilizando Jupiter](guia-de-usuario/untitled.md)
 * [Directivas](guia-de-usuario/directivas.md)
 * [Llamadas al Entorno](guia-de-usuario/llamadas-al-entorno.md)
+* [Instrucciones](guia-de-usuario/instructions.md)
 
