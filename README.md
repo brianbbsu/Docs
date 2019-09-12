@@ -10,14 +10,14 @@ description: RISC-V Assembler & Runtime Simulator
 
 **Jupiter** is an open source and education-oriented RISC-V assembler and runtime simulator. It is written in Java and capable of simulate all the instructions of the base integer ISA \(`I` extension\) plus the `M` and `F` extensions \(**RV32IMF**\), including all the pseudo-instructions described in the user-level instruction set manual. It was developed taking into account that it could be used in various courses such as: _Computer Architecture, Compilers and Assembly Programming_.
 
-### Main Features
+#### Main Features
 
 * **User Friendly**: Jupiter was designed focused on education and for all the people that are getting to know the RISC-V architecture. It places for priority the user experience. Jupiter has two modes of operation \(_Command Line Interface_ and _Graphical User Interface_\) and both of these were developed to be intuitive and easy to use.
 * **Modularity**: Jupiter can assemble and simulate several files at once, not everything has to be one file of 1,000 lines of code. Simply indicate by a global label what is the main starting point of the program. This permits modularity and enables the creation of projects and laboratories more easily.
 * **Feedback**: People using Jupiter gets feedback on what they are doing wrong. The simulator shows errors of: syntax, when trying to access reserved memory or when trying to write to a read-only memory.
 * **Cross-platform**: Jupiter is available for **Linux** \(_Ubuntu_\), **macOS** and **Windows**.
 
-### Screenshots
+#### Screenshots
 
 ![GUI Mode](.gitbook/assets/gui.png)
 
