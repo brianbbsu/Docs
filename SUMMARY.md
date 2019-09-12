@@ -2,7 +2,7 @@
 
 * [Jupiter](README.md)
 
-## Installation
+## Instalación <a id="installation"></a>
 
 * [Linux \(Ubuntu\)](installation/linux-ubuntu.md)
 * [macOS](installation/macos.md)
