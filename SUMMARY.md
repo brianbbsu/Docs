@@ -1,6 +1,7 @@
 # Table of contents
 
 * [Jupiter](README.md)
+* [Licencia](licencia.md)
 
 ## Instalación <a id="installation"></a>
 
