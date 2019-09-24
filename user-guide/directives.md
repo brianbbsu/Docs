@@ -1,5 +1,7 @@
 # Directives
 
+Jupiter supports most common assembler directives, including some indicated [here](https://github.com/riscv/riscv-asm-manual/blob/master/riscv-asm.md#pseudo-ops).
+
 ## .file
 
 ## .zero
