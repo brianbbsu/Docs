@@ -12,6 +12,12 @@ Emits filename.
 .file <filename>
 ```
 
+#### Example
+
+```bash
+.file "/home/ubuntu/Desktop/lab10.s"
+```
+
 #### Arguments
 
 * `filename`: filename
@@ -28,6 +34,12 @@ Reserves the specified number of bytes.
 
 ```text
 .zero <value>
+```
+
+#### Example
+
+```python
+.zero 10 # reserves 10 bytes
 ```
 
 #### **Arguments**
@@ -48,6 +60,12 @@ Stores the string and add null terminator.
 .string <string>
 ```
 
+#### Example
+
+```bash
+.string "hello world" 
+```
+
 #### **Arguments**
 
 * `string`: quoted string
@@ -66,13 +84,19 @@ Stores the string and do not add null terminator.
 .ascii <string>
 ```
 
+#### Example
+
+```bash
+.ascii "Hello world"
+```
+
 #### **Arguments**
 
 * `string`: quoted string
 
 #### **Aliases**
 
-* `.asciiz`, `.asciz`
+* **none**
 
 ## .byte
 
@@ -81,7 +105,14 @@ Store the listed value\(s\) as 8 bit bytes.
 #### **Usage**
 
 ```text
-.byte value [, value]*
+.byte <list>
+```
+
+#### Example
+
+```python
+.byte 10, 50
+.byte 2
 ```
 
 #### **Arguments**
@@ -99,7 +130,14 @@ Store the listed value\(s\) as 16-bit half words.
 #### **Usage**
 
 ```text
-.half value [, value]*
+.half <list>
+```
+
+#### Example
+
+```python
+.half 1, 2, 3
+.half 10
 ```
 
 #### **Arguments**
@@ -112,17 +150,24 @@ Store the listed value\(s\) as 16-bit half words.
 
 ## .word
 
-Store the listed value\(s\) as 32 bit words.
+Store the listed value\(s\)/symbol\(s\) as 32 bit words.
 
 #### **Usage**
 
 ```text
-.word value [, value]*
+.word <list>
+```
+
+#### Example
+
+```go
+.word 1, 3, 5, 7
+.word 0xcafe
 ```
 
 #### **Arguments**
 
-* `list`: 32-bit comma separated words
+* `list`: 32-bit comma separated words or comma separated symbols
 
 #### **Aliases**
 
@@ -135,7 +180,14 @@ Store the listed value\(s\) as 32 bit float values.
 #### **Usage**
 
 ```text
-.float value [, value]*
+.float <list>
+```
+
+#### Example
+
+```go
+.float 1e-4, 1.2, 0.005
+.float 3.1416
 ```
 
 #### **Arguments**
@@ -156,9 +208,15 @@ Align next data item to a power of 2 byte boundary.
 .align <alignval>
 ```
 
+#### Example
+
+```python
+.align 2 # 2 ^ 2 = 4 (word align)
+```
+
 #### **Arguments**
 
-* `alignval`: {0=byte, 1=half, 2=word}
+* `alignval`: integer, should be &gt;= 0
 
 #### **Aliases**
 
@@ -174,9 +232,15 @@ Align next data item to a byte boundary.
 .balign <alignval>
 ```
 
+#### Example
+
+```python
+.balign 4 # 4 bytes (word align)
+```
+
 #### **Arguments**
 
-* `alignval`: \(should be &gt; 0\)
+* `alignval`: integer, should be &gt; 0
 
 #### **Aliases**
 
@@ -184,17 +248,23 @@ Align next data item to a byte boundary.
 
 ## .globl
 
-Store the listed symbol\(s\) in the **global** symbol table.
+Store the symbol in the **global** symbol table.
 
 #### **Usage**
 
 ```text
-.globl symbol [, symbol]*
+.globl <symbol>
+```
+
+#### Example
+
+```python
+.globl foo
 ```
 
 #### **Arguments**
 
-* `list`: comma separated symbols
+* `symbol`: symbol to store in global symbol table
 
 #### **Aliases**
 
@@ -208,6 +278,19 @@ Emits the specified section and makes it the current section.
 
 ```text
 .section <section>
+```
+
+#### Example
+
+```python
+.section .text
+    li a0, 10
+.section .data
+    msg: .string "hello"
+.section .rodata
+    num: .word 10 
+.section .bss
+    array: .zero 40
 ```
 
 #### **Arguments**
@@ -228,6 +311,13 @@ Emits data section and makes it the current section.
 .data
 ```
 
+#### Example
+
+```python
+.data
+    msg: .string "hello"
+```
+
 #### **Arguments**
 
 * **none**
@@ -244,6 +334,14 @@ Emits text section and makes it the current section.
 
 ```text
 .text
+```
+
+#### Example
+
+```python
+.text
+    li a0, 10
+    ecall
 ```
 
 #### **Arguments**
@@ -264,6 +362,13 @@ Emits read-only data section and makes it the current section.
 .rodata
 ```
 
+#### Example
+
+```python
+.rodata
+    msg: .string "hello"
+```
+
 #### **Arguments**
 
 * **none**
@@ -280,6 +385,13 @@ Emits bss section and makes it the current section.
 
 ```text
 .bss
+```
+
+#### Example
+
+```python
+.bss
+    array: .zero 40
 ```
 
 #### **Arguments**
