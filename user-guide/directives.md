@@ -20,7 +20,7 @@ Emits filename.
 
 #### Arguments
 
-* `filename`: filename
+* `filename`: quoted filename
 
 #### Aliases
 
@@ -52,7 +52,7 @@ Reserves the specified number of bytes.
 
 ## .string
 
-Stores the string and add null terminator.
+Stores the string and adds null terminator.
 
 #### **Usage**
 
@@ -76,7 +76,7 @@ Stores the string and add null terminator.
 
 ## .ascii
 
-Stores the string and do not add null terminator.
+Stores the string and does not add null terminator.
 
 #### **Usage**
 
