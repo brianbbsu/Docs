@@ -19,6 +19,6 @@
 ## External Resources
 
 * [RISC-V Instruction Set Manual](https://content.riscv.org/wp-content/uploads/2017/05/riscv-spec-v2.2.pdf)
-* [RISC-V Green Card](https://www.cl.cam.ac.uk/teaching/1617/ECAD+Arch/files/docs/RISCVGreenCardv8-20151013.pdf)
+* [RISC-V Green Card \(Cambridge\)](https://www.cl.cam.ac.uk/teaching/1617/ECAD+Arch/files/docs/RISCVGreenCardv8-20151013.pdf)
 * [RISC-V Green Card \(Berkeley\)](http://inst.eecs.berkeley.edu/~cs61c/fa17/img/riscvcard.pdf)
 
