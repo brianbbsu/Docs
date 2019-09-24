@@ -1,6 +1,6 @@
 # Ecalls
 
-Jupiter currently supports a total of **25** environment calls through `ecall` instruction. To use an environment call, load the ecall **code** into register `a0` and load any arguments into `a1` - `a7` or `fa0`-`fa7` \(floating-point\) registers.
+Jupiter currently supports a total of **26** environment calls through `ecall` instruction. To use an environment call, load the ecall **code** into register `a0` and load any arguments into `a1` - `a7` or `fa0`-`fa7` \(floating-point\) registers.
 
 ## Print Int
 
