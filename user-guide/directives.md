@@ -9,12 +9,12 @@ Emits filename.
 #### Usage
 
 ```text
-.file <path>
+.file <filename>
 ```
 
 #### Arguments
 
-* `path`: file path
+* `filename`: filename
 
 #### Aliases
 
