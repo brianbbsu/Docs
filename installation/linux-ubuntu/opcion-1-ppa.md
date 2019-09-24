@@ -1,8 +1,10 @@
-# Linux \(Ubuntu\)
+---
+description: Personal Package Archive
+---
 
-## Opción 1: PPA
+# Opción 1: PPA
 
-Esta es la forma más fácil de instalar la última versión de Jupiter utilizando un PPA \(Personal Package Archive\), simplemente tiene que hacer lo siguiente en una terminal:
+Esta es la forma más fácil de instalar la última versión de Jupiter utilizando un PPA \(_Personal Package Archive_\), simplemente tiene que hacer lo siguiente en una terminal:
 
 ```bash
 sudo add-apt-repository ppa:andrescv/jupiter
@@ -15,12 +17,4 @@ Esto instalará la aplicación en **/opt/jupiter**, para desinstalarlo en algún
 ```bash
 sudo apt-get purge jupiter
 ```
-
-## Opción 2: Debian Package
-
-
-
-## Opción 3: Imagen
-
-
 

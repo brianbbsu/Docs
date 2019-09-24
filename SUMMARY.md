@@ -5,7 +5,9 @@
 
 ## Instalación <a id="installation"></a>
 
-* [Linux \(Ubuntu\)](installation/linux-ubuntu.md)
+* [Linux \(Ubuntu\)](installation/linux-ubuntu/README.md)
+  * [Opción 1: PPA](installation/linux-ubuntu/opcion-1-ppa.md)
+  * [Opción 2: deb package](installation/linux-ubuntu/opcion-2-deb-package.md)
 * [macOS](installation/macos.md)
 * [Windows](installation/windows.md)
 
