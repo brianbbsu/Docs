@@ -4,9 +4,25 @@ Jupiter supports most common assembler directives, including some indicated [her
 
 ## .file
 
+Emits filename.
+
+#### Usage
+
+```text
+.file <path>
+```
+
+#### Arguments
+
+* `path`: file path
+
+#### Aliases
+
+* **none**
+
 ## .zero
 
-Reserve the specified number of bytes.
+Reserves the specified number of bytes.
 
 #### **Usage**
 
@@ -24,37 +40,37 @@ Reserve the specified number of bytes.
 
 ## .string
 
-Store the string and add null terminator.
+Stores the string and add null terminator.
 
-**Usage**
+#### **Usage**
 
 ```text
 .string <string>
 ```
 
-**Arguments**
+#### **Arguments**
 
 * `string`: quoted string
 
-**Aliases**
+#### **Aliases**
 
 * `.asciiz`, `.asciz`
 
 ## .ascii
 
-Store the string and do not add null terminator.
+Stores the string and do not add null terminator.
 
-**Usage**
+#### **Usage**
 
 ```text
 .ascii <string>
 ```
 
-**Arguments**
+#### **Arguments**
 
 * `string`: quoted string
 
-**Aliases**
+#### **Aliases**
 
 * `.asciiz`, `.asciz`
 
@@ -62,17 +78,17 @@ Store the string and do not add null terminator.
 
 Store the listed value\(s\) as 8 bit bytes.
 
-**Usage**
+#### **Usage**
 
 ```text
 .byte value [, value]*
 ```
 
-**Arguments**
+#### **Arguments**
 
 * `list`: 8-bit comma separated bytes
 
-**Aliases**
+#### **Aliases**
 
 * **none**
 
@@ -80,17 +96,17 @@ Store the listed value\(s\) as 8 bit bytes.
 
 Store the listed value\(s\) as 16-bit half words.
 
-**Usage**
+#### **Usage**
 
 ```text
 .half value [, value]*
 ```
 
-**Arguments**
+#### **Arguments**
 
 * `list`: 16-bit comma separated half words
 
-**Aliases**
+#### **Aliases**
 
 * `.short`, `.2byte`
 
@@ -98,17 +114,17 @@ Store the listed value\(s\) as 16-bit half words.
 
 Store the listed value\(s\) as 32 bit words.
 
-**Usage**
+#### **Usage**
 
 ```text
 .word value [, value]*
 ```
 
-**Arguments**
+#### **Arguments**
 
 * `list`: 32-bit comma separated words
 
-**Aliases**
+#### **Aliases**
 
 * `.long`, `.4byte`
 
@@ -116,17 +132,17 @@ Store the listed value\(s\) as 32 bit words.
 
 Store the listed value\(s\) as 32 bit float values.
 
-**Usage**
+#### **Usage**
 
 ```text
 .float value [, value]*
 ```
 
-**Arguments**
+#### **Arguments**
 
 * `list`: 32-bit comma separated float words
 
-**Aliases**
+#### **Aliases**
 
 * **none**
 
@@ -134,17 +150,17 @@ Store the listed value\(s\) as 32 bit float values.
 
 Align next data item to a power of 2 byte boundary.
 
-**Usage**
+#### **Usage**
 
 ```text
 .align <alignval>
 ```
 
-**Arguments**
+#### **Arguments**
 
 * `alignval`: {0=byte, 1=half, 2=word}
 
-**Aliases**
+#### **Aliases**
 
 * `.palign`
 
@@ -152,17 +168,17 @@ Align next data item to a power of 2 byte boundary.
 
 Align next data item to a byte boundary.
 
-**Usage**
+#### **Usage**
 
 ```text
 .balign <alignval>
 ```
 
-**Arguments**
+#### **Arguments**
 
 * `alignval`: \(should be &gt; 0\)
 
-**Aliases**
+#### **Aliases**
 
 * **none**
 
@@ -170,17 +186,17 @@ Align next data item to a byte boundary.
 
 Store the listed symbol\(s\) in the **global** symbol table.
 
-**Usage**
+#### **Usage**
 
 ```text
 .globl symbol [, symbol]*
 ```
 
-**Arguments**
+#### **Arguments**
 
 * `list`: comma separated symbols
 
-**Aliases**
+#### **Aliases**
 
 * `.global`
 
@@ -188,17 +204,17 @@ Store the listed symbol\(s\) in the **global** symbol table.
 
 Emits the specified section and makes it the current section.
 
-**Usage**
+#### **Usage**
 
 ```text
 .section <section>
 ```
 
-**Arguments**
+#### **Arguments**
 
 * `section`: {`.text`, `.data`, `.rodata`, `.bss`}
 
-**Aliases**
+#### **Aliases**
 
 * **none**
 
@@ -206,17 +222,17 @@ Emits the specified section and makes it the current section.
 
 Emits data section and makes it the current section.
 
-**Usage**
+#### **Usage**
 
 ```text
 .data
 ```
 
-**Arguments**
+#### **Arguments**
 
 * **none**
 
-**Aliases**
+#### **Aliases**
 
 * **none**
 
@@ -224,17 +240,17 @@ Emits data section and makes it the current section.
 
 Emits text section and makes it the current section.
 
-**Usage**
+#### **Usage**
 
 ```text
 .text
 ```
 
-**Arguments**
+#### **Arguments**
 
 * **none**
 
-**Aliases**
+#### **Aliases**
 
 * **none**
 
@@ -242,17 +258,17 @@ Emits text section and makes it the current section.
 
 Emits read-only data section and makes it the current section.
 
-**Usage**
+#### **Usage**
 
 ```text
 .rodata
 ```
 
-**Arguments**
+#### **Arguments**
 
 * **none**
 
-**Aliases**
+#### **Aliases**
 
 * **none**
 
@@ -260,17 +276,17 @@ Emits read-only data section and makes it the current section.
 
 Emits bss section and makes it the current section.
 
-**Usage**
+#### **Usage**
 
 ```text
 .bss
 ```
 
-**Arguments**
+#### **Arguments**
 
 * **none**
 
-**Aliases**
+#### **Aliases**
 
 * **none**
 

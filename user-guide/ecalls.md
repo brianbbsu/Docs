@@ -6,7 +6,7 @@ Jupiter currently supports a total of **26** environment calls through `ecall` i
 
 Prints integer in register `a1`.
 
-**Example**
+#### **Example**
 
 ```python
 .globl __start
@@ -19,11 +19,11 @@ __start:
   ecall
 ```
 
-**Ecall Code**
+#### **Ecall Code**
 
 * `a0` = 1
 
-**Arguments**
+#### **Arguments**
 
 * `a1` = integer to print
 
@@ -31,7 +31,7 @@ __start:
 
 Prints float in register `fa0`.
 
-**Example**
+#### **Example**
 
 ```python
 .globl __start
@@ -49,11 +49,11 @@ __start:
   ecall
 ```
 
-**Ecall Code**
+#### **Ecall Code**
 
 * `a0` = 2
 
-**Arguments**
+#### **Arguments**
 
 * `fa0` = float to print
 
@@ -61,7 +61,7 @@ __start:
 
 Prints null-terminated string whose address is in register `a1`.
 
-**Example**
+#### **Example**
 
 ```python
 .globl __start
@@ -78,11 +78,11 @@ __start:
   ecall
 ```
 
-**Ecall Code**
+#### **Ecall Code**
 
 * `a0` = 4
 
-**Arguments**
+#### **Arguments**
 
 * `a1` = null-terminated string address
 
@@ -90,7 +90,7 @@ __start:
 
 Reads an integer from `stdin` and stores the result in register `a0`.
 
-**Example**
+#### **Example**
 
 ```python
 .globl __start
@@ -102,11 +102,11 @@ __start:
   ecall
 ```
 
-**Ecall Code**
+#### **Ecall Code**
 
 * `a0` = 5
 
-**Arguments**
+#### **Arguments**
 
 * **none**
 
@@ -126,11 +126,11 @@ __start:
   ecall
 ```
 
-**Ecall Code**
+#### **Ecall Code**
 
 * `a0` = 6
 
-**Arguments**
+#### **Arguments**
 
 * **none**
 
@@ -138,7 +138,7 @@ __start:
 
 It reads up to `length - 1` characters into a buffer whose address is in `a1` and terminates the string with a `null` byte. Buffer size has to be at least `length` bytes.
 
-**Example**
+#### **Example**
 
 ```python
 .globl __start
@@ -155,11 +155,11 @@ __start:
   ecall
 ```
 
-**Ecall Code**
+#### **Ecall Code**
 
 * `a0` = 8
 
-**Arguments**
+#### **Arguments**
 
 * `a1` = buffer address
 * `a2` = buffer length
@@ -168,7 +168,7 @@ __start:
 
 Stores a pointer to a block of memory containing `n` additional bytes in register `a0`. This pointer is word aligned.
 
-**Example**
+#### **Example**
 
 ```python
 .globl __start
@@ -181,11 +181,11 @@ __start:
   ecall
 ```
 
-**Ecall Code**
+#### **Ecall Code**
 
 * `a0` = 9
 
-**Arguments**
+#### **Arguments**
 
 * `a1` = number of bytes to reserve
 
@@ -193,7 +193,7 @@ __start:
 
 Stops a program from running.
 
-**Example**
+#### **Example**
 
 ```python
 .globl __start
@@ -205,11 +205,11 @@ __start:
   ecall
 ```
 
-**Ecall Code**
+#### **Ecall Code**
 
 * `a0` = 10
 
-**Arguments**
+#### **Arguments**
 
 * **none**
 
@@ -217,7 +217,7 @@ __start:
 
 Prints a character whose ascii code is in register `a1`.
 
-**Example**
+#### **Example**
 
 ```python
 .globl __start
@@ -230,11 +230,11 @@ __start:
   ecall
 ```
 
-**Ecall Code**
+#### **Ecall Code**
 
 * `a0` = 11
 
-**Arguments**
+#### **Arguments**
 
 * `a1` = ascii code to print
 
@@ -242,7 +242,7 @@ __start:
 
 Reads a character from `stdin` and stores the ascii code in register `a0`.
 
-**Example**
+#### **Example**
 
 ```python
 .globl __start
@@ -254,11 +254,11 @@ __start:
   ecall
 ```
 
-**Ecall Code**
+#### **Ecall Code**
 
 * `a0` = 12
 
-**Arguments**
+#### **Arguments**
 
 * **none**
 
@@ -266,7 +266,7 @@ __start:
 
 Opens a new file and obtains its file descriptor. Stores the file descriptor for the new file in register `a0`. The file descriptor returned is always the smallest integer greater than zero that is still available. If a negative value is returned, then there was an error opening the file. Maximum number of open files: **32**.
 
-**Example**
+#### **Example**
 
 ```python
 .globl __start
@@ -292,16 +292,16 @@ __start:
   ecall
 ```
 
-**Ecall Code**
+#### **Ecall Code**
 
 * `a0` = 13
 
-**Arguments**
+#### **Arguments**
 
 * `a1` = pathname address
 * `a2` = open flags
 
-**Open Flags**
+#### **Open Flags**
 
 | Name | Code | Description |
 | :--- | :--- | :--- |
@@ -317,7 +317,7 @@ __start:
 
 Reads data into a buffer whose address is in register `a2`. Stores the number of bytes that were read in register `a0`. If value is negative, then an error occurred. The buffer size should be greater or equal to the number bytes to read.
 
-**Example**
+#### **Example**
 
 ```javascript
 .globl __start
@@ -335,11 +335,11 @@ __start:
   ecall
 ```
 
-**Ecall Code**
+#### **Ecall Code**
 
 * `a0` = 14
 
-**Arguments**
+#### **Arguments**
 
 * `a1` = file descriptor
 * `a2` = buffer address
@@ -349,7 +349,7 @@ __start:
 
 Writes data out of a buffer whose address is in register `a2`. Stores the number of bytes that were written in register `a0`. If value is negative, then an error occurred.
 
-**Example**
+#### **Example**
 
 ```python
 .globl main
@@ -367,11 +367,11 @@ main:
   ecall
 ```
 
-**Ecall Code**
+#### **Ecall Code**
 
 * `a0` = 15
 
-**Arguments**
+#### **Arguments**
 
 * `a1` = file descriptor
 * `a2` = buffer address
@@ -381,7 +381,7 @@ main:
 
 Close an open file descriptor. Stores a 0 upon success in register `a0`, and a -1 upon failure.
 
-**Example**
+#### **Example**
 
 ```python
 .globl __start
@@ -394,11 +394,11 @@ __start:
   ecall
 ```
 
-**Ecall Code**
+#### **Ecall Code**
 
 * `a0` = 16
 
-**Arguments**
+#### **Arguments**
 
 * `a1` = file descriptor
 
@@ -406,7 +406,7 @@ __start:
 
 Stops the program from running and takes an argument, which is the value that Jupiter uses in its call on exit.
 
-**Example**
+#### **Example**
 
 ```python
 .globl __start
@@ -419,11 +419,11 @@ __start:
   ecall
 ```
 
-**Ecall Code**
+#### **Ecall Code**
 
 * `a0` = 17
 
-**Arguments**
+#### **Arguments**
 
 * `a1` = exit status code
 
@@ -431,7 +431,7 @@ __start:
 
 Changes the location of the read/write pointer of a file descriptor. The location can be set either in absolute or relative terms.
 
-**Example**
+#### **Example**
 
 ```python
 .globl __start
@@ -442,11 +442,11 @@ __start:
   ecall
 ```
 
-**Ecall Code**
+#### **Ecall Code**
 
 * `a0` = 18
 
-**Arguments**
+#### **Arguments**
 
 * `a1` = file descriptor
 * `a2` = offset of the pointer \(measured in bytes\)
@@ -462,7 +462,7 @@ __start:
 
 Causes the Jupiter Java thread to sleep for \(at least\) the specified number of milliseconds in register `a1`. This timing will not be precise, as the Java implementation will add some overhead.
 
-**Example**
+#### **Example**
 
 ```python
 .globl __start
@@ -475,11 +475,11 @@ __start:
   ecall
 ```
 
-**Ecall Code**
+#### **Ecall Code**
 
 * `a0` = 19
 
-**Arguments**
+#### **Arguments**
 
 * `a1` = number of milliseconds
 
@@ -487,7 +487,7 @@ __start:
 
 Stores the current working directory in a buffer whose address is in register `a1`.
 
-**Example**
+#### **Example**
 
 ```python
 .globl __start
@@ -504,11 +504,11 @@ __start:
   ecall
 ```
 
-**Ecall Code**
+#### **Ecall Code**
 
 * `a0` = 20
 
-**Arguments**
+#### **Arguments**
 
 * `a1` = buffer address
 
@@ -516,7 +516,7 @@ __start:
 
 Stores the system time. `a0` contains the low order 32 bits of system time and `a1` high order 32 bits of system time.
 
-**Example**
+#### **Example**
 
 ```python
 .globl __start
@@ -528,11 +528,11 @@ __start:
   ecall
 ```
 
-**Ecall Code**
+#### **Ecall Code**
 
 * `a0` = 21
 
-**Arguments**
+#### **Arguments**
 
 * **none**
 
@@ -540,7 +540,7 @@ __start:
 
 Prints integer in register `a1` in hex representation. Displayed value is 8 hexadecimal digits, left-padding with zeroes if necessary.
 
-**Example**
+#### **Example**
 
 ```python
 .globl __start
@@ -553,11 +553,11 @@ __start:
   ecall
 ```
 
-**Ecall Code**
+#### **Ecall Code**
 
 * `a0` = 22
 
-**Arguments**
+#### **Arguments**
 
 * `a1` = integer to print
 
@@ -565,7 +565,7 @@ __start:
 
 Prints integer in register `a1` in binary representation. Displayed value is 32 binary digits, left-padding with zeroes if necessary.
 
-**Example**
+#### **Example**
 
 ```python
 .globl __start
@@ -578,11 +578,11 @@ __start:
   ecall
 ```
 
-**Ecall Code**
+#### **Ecall Code**
 
 * `a0` = 23
 
-**Arguments**
+#### **Arguments**
 
 * `a1` = integer to print
 
@@ -590,7 +590,7 @@ __start:
 
 Prints integer in register `a1` as a 32-bit unsigned value. 
 
-**Example**
+#### **Example**
 
 ```python
 .globl __start
@@ -603,11 +603,11 @@ __start:
   ecall
 ```
 
-**Ecall Code**
+#### **Ecall Code**
 
 * `a0` = 23
 
-**Arguments**
+#### **Arguments**
 
 * `a1` = integer to print
 
@@ -615,7 +615,7 @@ __start:
 
 Sets the seed of the corresponding underlying Java pseudo-random number generator.
 
-**Example**
+#### **Example**
 
 ```python
 .globl __start
@@ -628,11 +628,11 @@ __start:
   ecall
 ```
 
-**Ecall Code**
+#### **Ecall Code**
 
 * `a0` = 25
 
-**Arguments**
+#### **Arguments**
 
 * `a1` = seed
 
@@ -640,7 +640,7 @@ __start:
 
 Stores the next pseudorandom, uniformly distributed, int value from the random number generator's sequence, in register `a0`.
 
-**Example**
+#### **Example**
 
 ```python
 .globl __start
@@ -652,11 +652,11 @@ __start:
   ecall
 ```
 
-**Ecall Code**
+#### **Ecall Code**
 
 * `a0` = 26
 
-**Arguments**
+#### **Arguments**
 
 * **none**
 
@@ -664,7 +664,7 @@ __start:
 
 Stores the next pseudorandom, uniformly distributed, int value from the random number generator's sequence, in register `a0`. The next pseudorandom value will be in \[`a1`, `a2`\] range.
 
-**Example**
+#### **Example**
 
 ```python
 .globl __start
@@ -678,11 +678,11 @@ __start:
   ecall
 ```
 
-**Ecall Code**
+#### **Ecall Code**
 
 * `a0` = 27
 
-**Arguments**
+#### **Arguments**
 
 * `a1` = lower bound of range
 * `a2` = upper bound of range
@@ -691,7 +691,7 @@ __start:
 
 Stores the next pseudorandom, uniformly distributed, float value in the range \[0.0, 1.0\] from the random number generator's sequence, in register `a0`.
 
-**Example**
+#### **Example**
 
 ```text
 .globl __start
@@ -703,11 +703,11 @@ __start:
   ecall
 ```
 
-**Ecall Code**
+#### **Ecall Code**
 
 * `a0` = 28
 
-**Arguments**
+#### **Arguments**
 
 * **none**
 
