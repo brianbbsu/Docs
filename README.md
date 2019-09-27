@@ -14,7 +14,7 @@ description: RISC-V Assembler & Runtime Simulator
 
 * **User Friendly**: Jupiter was designed focused on education and for all the people that are getting to know the RISC-V architecture. It places for priority the user experience. Jupiter has two modes of operation \(_Command Line Interface_ and _Graphical User Interface_\) and both of these were developed to be intuitive and easy to use.
 * **Modularity**: Jupiter can assemble and simulate several files at once, not everything has to be one file of 1,000 lines of code. Simply indicate by a global label what is the main starting point of the program. This permits modularity and enables the creation of projects and laboratories more easily.
-* **Feedback**: People using Jupiter gets feedback on what they are doing wrong. The simulator shows errors of: syntax, when trying to access reserved memory or when trying to write to a read-only memory.
+* **Feedback**: People using Jupiter gets feedback on what they are doing wrong ![100](https://github.githubassets.com/images/icons/emoji/unicode/1f4af.png). The simulator shows different types of errors like: syntax errors, when trying to access reserved memory or when trying to write to a read-only memory.
 * **Cross-platform**: Jupiter is available for **Linux** \(_Ubuntu_\), **macOS** and **Windows**.
 
 ### Screenshots
