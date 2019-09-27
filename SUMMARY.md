@@ -9,12 +9,16 @@
 * [macOS](installation-1/macos.md)
 * [Windows](installation-1/windows.md)
 
-## User Guide
+## User Guide <a id="guide"></a>
 
-* [Using Jupiter](user-guide/using-jupiter.md)
-* [Directives](user-guide/directives.md)
-* [Ecalls](user-guide/ecalls.md)
-* [Instructions](user-guide/instructions.md)
+* [GUI Mode](guide/gui.md)
+* [CLI Mode](guide/cli-mode.md)
+
+## Assembler
+
+* [Directives](assembler/directives.md)
+* [Ecalls](assembler/ecalls.md)
+* [Instructions](assembler/instructions.md)
 
 ## External Resources
 
