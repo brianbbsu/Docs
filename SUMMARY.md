@@ -8,6 +8,7 @@
 * [Linux](installation-1/linux.md)
 * [macOS](installation-1/macos.md)
 * [Windows](installation-1/windows.md)
+* [Docker Image](installation-1/docker-image.md)
 
 ## User Guide <a id="guide"></a>
 
