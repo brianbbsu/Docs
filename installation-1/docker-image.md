@@ -4,7 +4,7 @@
 
 You need to install Docker first, please follow the installation guide in the link below.
 
-{% embed url="https://docs.docker.com/install/" caption="Docker Installation Methods" %}
+{% embed url="https://docs.docker.com/install/" caption="https://docs.docker.com/install/" %}
 
 ## Using Jupiter with Docker
 
@@ -23,7 +23,7 @@ docker run -it --rm -v $PWD:/riscv -w /riscv andrescv/jupiter:3.1 fibonacci.s
 
 Visit the link below to see available tags
 
-{% embed url="https://cloud.docker.com/u/andrescv/repository/docker/andrescv/jupiter" %}
+{% embed url="https://hub.docker.com/r/andrescv/jupiter" caption="https://hub.docker.com/r/andrescv/jupiter" %}
 
 
 
