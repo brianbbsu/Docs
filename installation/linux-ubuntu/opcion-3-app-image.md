@@ -12,10 +12,12 @@ Para instalar Jupiter, por favor descargue la imagen de la aplicación y el scri
 
 {% file src="../../.gitbook/assets/jupiter.sh" caption="jupiter \(script de ejecución\)" %}
 
-Abra una terminal y diríjase al directorio en donde ambos archivos fueron descargados, luego ejecute los siguientes comandos:
+Abra una terminal y ejecute los siguientes comandos \(asumiendo que los archivos se descargaron en **~/Downloads**\):
 
 ```bash
 unzip Jupiter-3.1-linux.zip
+sudo rm -rf /opt/jupiter
+sudo rm -f /usr/bin/jupiter
 sudo mv image /opt/jupiter
 sudo mv jupiter.sh /usr/bin/jupiter
 sudo chmod +x /usr/bin/jupiter
