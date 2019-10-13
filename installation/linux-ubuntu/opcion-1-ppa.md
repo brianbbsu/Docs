@@ -6,7 +6,7 @@ description: Personal Package Archive
 
 ## Instalación
 
-Esta es la manera más fácil de instalar la última versión de Jupiter, utilizando un PPA \(_Personal Package Archive_\), simplemente tiene que correr lo siguiente en una terminal:
+Esta es la manera más fácil de instalar la última versión de Jupiter, utilizando un PPA \(_Personal Package Archive_\), simplemente tiene que ejecutar lo siguiente en una terminal:
 
 ```bash
 sudo add-apt-repository ppa:andrescv/jupiter
