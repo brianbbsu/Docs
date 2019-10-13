@@ -4,7 +4,9 @@ description: Personal Package Archive
 
 # Opción 1: PPA
 
-Esta es la forma más fácil de instalar la última versión de Jupiter utilizando un PPA \(_Personal Package Archive_\), simplemente tiene que hacer lo siguiente en una terminal:
+## Instalación
+
+Esta es la manera más fácil de instalar la última versión de Jupiter, utilizando un PPA \(_Personal Package Archive_\), simplemente tiene que correr lo siguiente en una terminal:
 
 ```bash
 sudo add-apt-repository ppa:andrescv/jupiter
@@ -12,9 +14,27 @@ sudo apt-get update
 sudo apt-get install jupiter
 ```
 
-Esto instalará la aplicación en **/opt/jupiter**, para desinstalarlo en algún futuro simplemente tiene que hacer lo siguiente en una terminal:
+Estos comandos instalarán el simulador en **/opt/jupiter**.
+
+## Desinstalación
+
+Para desinstalar en algún futuro Jupiter, simplemente tiene que hacer lo siguiente en una terminal:
 
 ```bash
 sudo apt-get purge jupiter
 ```
+
+Luego de utilizar este comando el simulador quedará completamente desinstalado de su computadora.
+
+## Actualizaciones
+
+Puede actualizar el simulador a una versión más reciente utilizando los siguientes comandos:
+
+```bash
+sudo apt-get update && sudo apt-get upgrade
+```
+
+{% hint style="info" %}
+El simulador se actualizará únicamente si existen actualizaciones disponibles.
+{% endhint %}
 
