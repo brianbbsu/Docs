@@ -104,5 +104,5 @@ Luego de utilizar estos comandos el simulador quedará completamente desinstalad
 
 ## Actualizaciones
 
-Cada vez que haya una actualización del simulador y este sea su método de instalación, por favor revise esta página para compilar la versión más reciente e instalarlo utilizando las mismas instrucciones.
+Cada vez que haya una actualización del simulador y este sea su método de instalación, por favor revise esta página para compilar la versión más reciente e instalarla utilizando las mismas instrucciones.
 
