@@ -14,8 +14,6 @@ sudo apt-get install jupiter
 
 You need to download the debian package:
 
-{% file src="../.gitbook/assets/jupiter\_3.1\_amd64.deb" caption="Jupiter deb package" %}
-
 Then run the following command in a terminal
 
 ```bash
