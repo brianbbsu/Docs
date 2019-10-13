@@ -6,7 +6,7 @@ description: Debian Package
 
 En esta opción usted instalara Jupiter utilizando un _Debian Package_. Tiene que descargar el siguiente archivo:
 
-{% file src="../../.gitbook/assets/jupiter\_3.1\_amd64.deb" %}
+{% embed url="https://github.com/andrescv/Jupiter/releases/download/v3.1/jupiter\_3.1\_amd64.deb" %}
 
 Luego en una terminal diríjase al directorio en donde descargó el archivo y utilice los siguientes comandos:
 
