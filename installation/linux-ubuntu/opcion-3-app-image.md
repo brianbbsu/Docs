@@ -1,3 +1,7 @@
+---
+description: Imagen de la Aplicación
+---
+
 # Opción 3: App Image
 
 ## Instalación
@@ -28,6 +32,25 @@ Necesitará tener instalado el programa `unzip`. Si no lo tiene instalado en su 
 sudo apt-get install unzip
 ```
 {% endhint %}
+
+Para verificar que la instalación se haya efectuado correctamente pruebe lo siguiente en una terminal:
+
+```bash
+jupiter -v
+```
+
+Debería de ver la siguiente salida:
+
+```bash
+        __          _ __         
+    __ / /_ _____  (_) /____ ____
+   / // / // / _ \/ / __/ -_) __/
+   \___/\_,_/ .__/_/\__/\__/_/
+           /_/                   
+
+RISC-V Assembler & Runtime Simulator
+               v3.1
+```
 
 ## Desinstalación
 

@@ -16,7 +16,24 @@ Luego en una terminal diríjase al directorio en donde descargó el archivo y ut
 sudo dpkg -i jupiter_3.1_amd64.deb
 ```
 
-Este comando instalará el simulador en **/opt/jupiter**.
+Este comando instalará el simulador en **/opt/jupiter**. Para verificar que la instalación se haya efectuado correctamente pruebe lo siguiente en una terminal:
+
+```bash
+jupiter -v
+```
+
+Debería de ver la siguiente salida:
+
+```bash
+        __          _ __         
+    __ / /_ _____  (_) /____ ____
+   / // / // / _ \/ / __/ -_) __/
+   \___/\_,_/ .__/_/\__/\__/_/
+           /_/                   
+
+RISC-V Assembler & Runtime Simulator
+               v3.1
+```
 
 ## Desinstalación 
 

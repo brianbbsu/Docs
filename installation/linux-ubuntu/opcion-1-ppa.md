@@ -14,7 +14,24 @@ sudo apt-get update
 sudo apt-get install jupiter
 ```
 
-Estos comandos instalarán el simulador en **/opt/jupiter**.
+Estos comandos instalarán el simulador en **/opt/jupiter**. Para verificar que la instalación se haya efectuado correctamente pruebe lo siguiente en una terminal:
+
+```bash
+jupiter -v
+```
+
+Debería de ver la siguiente salida:
+
+```bash
+        __          _ __         
+    __ / /_ _____  (_) /____ ____
+   / // / // / _ \/ / __/ -_) __/
+   \___/\_,_/ .__/_/\__/\__/_/
+           /_/                   
+
+RISC-V Assembler & Runtime Simulator
+               v3.1
+```
 
 ## Desinstalación
 
