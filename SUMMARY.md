@@ -5,11 +5,11 @@
 
 ## Instalación <a id="installation"></a>
 
-* [Linux \(Ubuntu\)](installation/linux-ubuntu/README.md)
-  * [Opción 1: PPA](installation/linux-ubuntu/ppa.md)
-  * [Opción 2: deb package](installation/linux-ubuntu/deb.md)
-  * [Opción 3: App Image](installation/linux-ubuntu/image.md)
-  * [Opción 4: Compilar](installation/linux-ubuntu/build.md)
+* [Linux \(Ubuntu\)](installation/linux/README.md)
+  * [Opción 1: PPA](installation/linux/ppa.md)
+  * [Opción 2: deb package](installation/linux/deb.md)
+  * [Opción 3: App Image](installation/linux/image.md)
+  * [Opción 4: Compilar](installation/linux/build.md)
 * [macOS](installation/macos.md)
 * [Windows](installation/windows.md)
 
