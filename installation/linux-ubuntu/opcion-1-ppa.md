@@ -26,6 +26,12 @@ sudo apt-get purge jupiter
 
 Luego de utilizar este comando el simulador quedará completamente desinstalado de su computadora.
 
+Adicionalmente puede eliminar el PPA utilizando el siguiente comando:
+
+```bash
+sudo add-apt-repository --remove ppa:andrescv/jupiter
+```
+
 ## Actualizaciones
 
 Puede actualizar el simulador a una versión más reciente utilizando los siguientes comandos:
@@ -37,4 +43,6 @@ sudo apt-get update && sudo apt-get upgrade
 {% hint style="info" %}
 El simulador se actualizará únicamente si existen actualizaciones disponibles.
 {% endhint %}
+
+
 
