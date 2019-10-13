@@ -1,2 +1,2 @@
-# Utilizando Jupiter
+# Modo GUI
 
