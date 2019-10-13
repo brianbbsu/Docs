@@ -10,5 +10,3 @@ Esta sección contiene los métodos de instalación de Jupiter para el sistema o
 
 {% page-ref page="build.md" %}
 
-
-

@@ -61,5 +61,3 @@ sudo apt-get update && sudo apt-get upgrade
 El simulador se actualizará únicamente si existen actualizaciones disponibles.
 {% endhint %}
 
-
-

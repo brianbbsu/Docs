@@ -49,5 +49,3 @@ Luego de utilizar este comando el simulador quedará completamente desinstalado 
 
 Cada vez que haya una actualización del simulador y este sea su método de instalación, por favor revise esta página para descargar el archivo más reciente e instalarlo utilizando las mismas instrucciones.
 
-
-
