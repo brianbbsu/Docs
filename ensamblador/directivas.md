@@ -1,6 +1,6 @@
 # Directivas
 
-Jupiter soporta las directivas de ensamblador más comunes, incluyendo algunas mencionadas [aquí](https://github.com/riscv/riscv-asm-manual/blob/master/riscv-asm.md#pseudo-ops).
+Jupiter soporta las directivas de ensamblador más comunes, incluyendo la mayor parte de directivas listadas en el [manual](https://github.com/riscv/riscv-asm-manual/blob/master/riscv-asm.md#pseudo-ops) de ensamblador de RISC-V.
 
 ## .file
 
