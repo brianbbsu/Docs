@@ -15,7 +15,7 @@ Guarda el nombre del archivo en la tabla de símbolos local.
 #### Ejemplo
 
 ```bash
-.file "/home/ubuntu/Desktop/lab10.s"
+.file "/home/ubuntu/Desktop/fibo.s"
 ```
 
 #### Argumentos
