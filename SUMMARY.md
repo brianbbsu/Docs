@@ -20,6 +20,8 @@
 ## Guía de Usuario
 
 * [Modo GUI](guia-de-usuario/untitled.md)
+* [Directivas](ensamblador/directivas.md)
+* [Instrucciones](ensamblador/instructions.md)
 * [Modo CLI](guia-de-usuario/modo-cli.md)
 
 ## Ensamblador
