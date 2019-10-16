@@ -28,7 +28,7 @@ Guarda el nombre del archivo en la tabla de símbolos local.
 
 ## .zero
 
-Reserva la cantidad especificada de bytes.
+Reserva la cantidad especificada de bytes en el segmento de datos actual. Esta directiva solo puede ser utilizada en los segmentos `.data` y `.bss`.
 
 #### **Uso**
 
@@ -52,7 +52,7 @@ Reserva la cantidad especificada de bytes.
 
 ## .string
 
-Guarda un string agregando un caracter null \(`\0`\) al final.
+Guarda un string agregando un caracter nulo \(`\0`\) al final.
 
 #### **Uso**
 
@@ -63,7 +63,7 @@ Guarda un string agregando un caracter null \(`\0`\) al final.
 #### Ejemplo
 
 ```bash
-.string "hello world" 
+.string "hola mundo" 
 ```
 
 #### **Argumentos**
@@ -76,7 +76,7 @@ Guarda un string agregando un caracter null \(`\0`\) al final.
 
 ## .ascii
 
-Guarda un string sin agregar un caracter null \(`\0`\) al final.
+Guarda un string _**sin**_ agregar un caracter nulo \(`\0`\) al final.
 
 #### **Uso**
 
@@ -87,7 +87,7 @@ Guarda un string sin agregar un caracter null \(`\0`\) al final.
 #### Ejemplo
 
 ```bash
-.ascii "Hello world"
+.ascii "Hola mundo"
 ```
 
 #### **Argumentos**
@@ -100,7 +100,7 @@ Guarda un string sin agregar un caracter null \(`\0`\) al final.
 
 ## .byte
 
-Guarda los valores listados como bytes de 8 bits.
+Guarda los valores listados como bytes \(8 bits\).
 
 #### **Uso**
 
@@ -117,7 +117,7 @@ Guarda los valores listados como bytes de 8 bits.
 
 #### **Argumentos**
 
-* `list`: bytes de 8 bits separados por coma
+* `list`: bytes \(8 bits\) separados por coma
 
 #### **Alias**
 
@@ -125,7 +125,7 @@ Guarda los valores listados como bytes de 8 bits.
 
 ## .half
 
-Guarda los valores listados como halfs de 16 bits.
+Guarda los valores listados como halfs \(16 bits\).
 
 #### **Uso**
 
@@ -142,7 +142,7 @@ Guarda los valores listados como halfs de 16 bits.
 
 #### **Argumentos**
 
-* `list`: halfs de 16 bits separados por coma
+* `list`: halfs \(16 bits\) separados por coma
 
 #### **Alias**
 
@@ -150,7 +150,7 @@ Guarda los valores listados como halfs de 16 bits.
 
 ## .word
 
-Guarda los valores listados como palabras de 32 bits.
+Guarda los valores listados como palabras \(32 bits\).
 
 #### **Uso**
 
@@ -163,7 +163,8 @@ Guarda los valores listados como palabras de 32 bits.
 ```python
 .word 1, 3, 5, 7
 .word 0xcafe
-.word foo # guarda la direccion de 32 bits de la etiqueta foo
+.word foo # guarda la direccion de la etiqueta foo
+          # la direccion es de 32 bits (una palabra)
 
 foo:
     ...
@@ -171,7 +172,7 @@ foo:
 
 #### **Argumentos**
 
-* `list`: palabras de 32 bits o etiquetas separadas por coma
+* `list`: palabras o etiquetas separadas por coma 
 
 #### **Alias**
 
@@ -196,7 +197,7 @@ Guarda los valores listados como valores de punto flotante de 32 bits.
 
 #### **Arguments**
 
-* `list`: valores de punto flotante separados por coma
+* `list`: valores de punto flotante \(32 bits\) separados por coma
 
 #### **Alias**
 
@@ -204,7 +205,7 @@ Guarda los valores listados como valores de punto flotante de 32 bits.
 
 ## .align
 
-Alinea el siguiente elemento de datos a un límite de una potencia de 2 en bytes.
+Alinea el siguiente elemento de datos a un límite de una potencia de 2 bytes.
 
 #### **Uso**
 
@@ -215,9 +216,9 @@ Alinea el siguiente elemento de datos a un límite de una potencia de 2 en bytes
 #### Ejemplo
 
 ```python
-.align 0 # 2 ^ 0 = 1 (byte align)
-.align 1 # 2 ^ 1 = 2 (half align)
-.align 2 # 2 ^ 2 = 4 (word align) 
+.align 0 # 2 ^ 0 = 1 (byte align = 1 byte)
+.align 1 # 2 ^ 1 = 2 (half align = 2 bytes)
+.align 2 # 2 ^ 2 = 4 (word align = 4 bytes) 
 ```
 
 #### **Argumentos**
@@ -254,7 +255,7 @@ Alinea el siguiente elemento de datos a un limite en bytes.
 
 ## .globl
 
-Guarda el símbolo en la tabla de símbolos **global**.
+Guarda el símbolo especificado en la tabla de símbolos **global**.
 
 #### **Uso**
 
@@ -304,7 +305,7 @@ Emite la sección especificada y se vuelve la sección actual.
 
 #### **Argumentos**
 
-* `section`: {`.text`, `.data`, `.rodata`, `.bss`}
+* `section`: solo puede ser {`.text`, `.data`, `.rodata`, `.bss`}
 
 #### **Alias**
 
