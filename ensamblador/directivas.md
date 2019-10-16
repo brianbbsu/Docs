@@ -1,7 +1,5 @@
 # Directivas
 
-
-
 Jupiter soporta las directivas de ensamblador más comunes, incluyendo algunas mencionadas [aquí](https://github.com/riscv/riscv-asm-manual/blob/master/riscv-asm.md#pseudo-ops).
 
 ## .file
