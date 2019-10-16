@@ -20,15 +20,13 @@
 ## Guía de Usuario
 
 * [Modo GUI](guia-de-usuario/untitled.md)
-* [Directivas](ensamblador/directivas.md)
-* [Instrucciones](ensamblador/instructions.md)
 * [Modo CLI](guia-de-usuario/modo-cli.md)
 
 ## Ensamblador
 
 * [Directivas](ensamblador/directivas.md)
 * [Llamadas al Entorno](ensamblador/llamadas-al-entorno.md)
-* [Instrucciones](ensamblador/instructions.md)
+* [Instrucciones](ensamblador/instrucciones.md)
 
 ## Fuentes Externas
 
