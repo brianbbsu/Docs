@@ -3,16 +3,16 @@
 * [Jupiter](README.md)
 * [License](license.md)
 
-## Installation <a id="installation-1"></a>
+## Installation
 
-* [Linux](installation-1/linux.md)
-* [macOS](installation-1/macos/README.md)
-  * [Option 1: App Image](installation-1/macos/option-1-app-image.md)
-  * [Option 2: Build From Source](installation-1/macos/option-2-build-from-source.md)
-* [Windows](installation-1/windows/README.md)
-  * [Option 1: App Image](installation-1/windows/option-1-app-image.md)
-  * [Option 2: Build From Source](installation-1/windows/option-2-build-from-source.md)
-* [Docker Image](installation-1/docker-image.md)
+* [Linux](installation/linux.md)
+* [macOS](installation/macos/README.md)
+  * [Option 1: App Image](installation/macos/option-1-app-image.md)
+  * [Option 2: Build From Source](installation/macos/option-2-build-from-source.md)
+* [Windows](installation/windows/README.md)
+  * [Option 1: App Image](installation/windows/option-1-app-image.md)
+  * [Option 2: Build From Source](installation/windows/option-2-build-from-source.md)
+* [Docker Image](installation/docker-image.md)
 
 ## User Guide <a id="guide"></a>
 
