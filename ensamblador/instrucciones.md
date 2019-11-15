@@ -810,11 +810,11 @@ lui rd, immediate
 
 ## mul
 
-Multiplica $\texttt{x\[rs1\]}$ por $\texttt{x\[rs2\]}$ y escribe el producto en $\texttt{f\[rd\]}$. Overflow aritmético ignorado.
+Multiplica `x[rs1]` por `x[rs2]` y escribe el producto en `f[rd]`. Overflow aritmético ignorado.
 
 * _Multiply_
-* **Operación**: $\texttt{x\[rd\] = x\[rs1\] × x\[rs2\]}$
-* **Tipo**: $\texttt{R}$
+* **Operación**: x\[rd\] $$=$$ x\[rs1\]$$×$$ x\[rs2\]
+* **Tipo**: R
 
 **Uso**
 
@@ -824,11 +824,11 @@ mul rd, rs1, rs2
 
 ## mulh
 
-Multiplica $\texttt{x\[rs1\]}$ por $\texttt{x\[rs2\]}$, tratando los valores como números de complemento a dos, y escribe la mitad alta del producto a $\texttt{f\[rd\]}$.
+Multiplica `x[rs1]` por `x[rs2]`, tratando los valores como números de complemento a dos, y escribe la mitad alta del producto a `f[rd]`.
 
 * _Multiply High_
-* **Operación**: $\texttt{x\[rd\] = \(x\[rs1\]}$ $\_s × \_s$ $\texttt{x\[rs2\]\) &gt;&gt;}$ $\_s$ $\texttt{ XLEN}$
-* **Tipo**: $\texttt{R}$
+* **Operación**: x\[rd\] = \( x\[rs1\] $$_s × _s$$ x\[rs2\] \) $$>>_s$$ XLEN
+* **Tipo**: R
 
 **Uso**
 
@@ -838,11 +838,11 @@ mulh rd, rs1, rs2
 
 ## mulhsu
 
-Multiplica $\texttt{x\[rs1\]}$ por $\texttt{x\[rs2\]}$, tratando a $\texttt{x\[rs1\]}$ como un número de complemento a dos, y a $\texttt{x\[rs2\]}$ como un número sin signo, y escribe la mitad alta del producto a $\texttt{f\[rd\]}$.
+Multiplica `x[rs1]` por `x[rs2]`, tratando a `x[rs1]` como un número de complemento a dos, y a `x[rs2]` como un número sin signo, y escribe la mitad alta del producto a `f[rd]`.
 
 * _Multiply High Signed-Unsigned_
-* **Operación**: $\texttt{x\[rd\] = \(x\[rs1\]}$ $\_s × \_u$ $\texttt{x\[rs2\]\) &gt;&gt;}$ $\_s$ $\texttt{ XLEN}$
-* **Tipo**: $\texttt{R}$
+* **Operación**: x\[rd\] $$=$$ \( x\[rs1\] $$_s × _u$$ x\[rs2\] \) $$>>_s$$  XLEN
+* **Tipo**: R
 
 **Uso**
 
@@ -852,11 +852,11 @@ mulhsu rd, rs1, rs2
 
 ## mulhu
 
-Multiplica $\texttt{x\[rs1\]}$ por $\texttt{x\[rs2\]}$, tratando los valores como números sin signo, y escribe la mitad alta del producto a $\texttt{f\[rd\]}$.
+Multiplica `x[rs1]` por `x[rs2]`, tratando los valores como números sin signo, y escribe la mitad alta del producto a `f[rd]`.
 
 * _Multiply High Unsigned_
-* **Operación**: $\texttt{x\[rd\] = \(x\[rs1\]}$ $\_u × \_u$ $\texttt{x\[rs2\]\) &gt;&gt;}$ $\_u$ $\texttt{ XLEN}$
-* **Tipo**: $\texttt{R}$
+* **Operación**: x\[rd\] $$=$$ \( x\[rs1\] $$_u ×_u$$ x\[rs2\] \) $$>>_u$$ XLEN
+* **Tipo**: R
 
 **Uso**
 
@@ -866,11 +866,13 @@ mulhu rd, rs1, rs2
 
 ## or
 
-Calcula el $\texttt{OR}$ inclusivo a nivel de bits de los registros $\texttt{x\[rs1\]}$ y $\texttt{x\[rs2\]}$ y escribe el resultado en $\texttt{x\[rd\]}$. Formas comprimidas: **$\texttt{c.o}$** $\texttt{ rd, rs2}$
+Calcula el `OR` inclusivo a nivel de bits de los registros `x[rs1]` y `x[rs2]` y escribe el resultado en `x[rd]`. 
+
+Formas comprimidas: **`c.o`**`rd, rs2`
 
 * _OR_
-* **Operación**: $\texttt{x\[rd\] = x\[rs1\] \| x\[rs2\]}$
-* **Tipo**: $\texttt{R}$
+* **Operación**: x\[rd\] $$=$$ x\[rs1\] $$|$$ x\[rs2\]
+* **Tipo**: R
 
 **Uso**
 
@@ -880,11 +882,11 @@ or rd, rs1, rs2
 
 ## ori
 
-Calcula el $\texttt{OR}$ inclusivo a nivel de bits del $\texttt{inmediato sign-extended}$ y el registro $\texttt{x\[rs1\]}$ y escribe el resultado en $\texttt{x\[rd\]}$.
+Calcula el `OR` inclusivo a nivel de bits del `inmediato sign-extended` y el registro `x[rs1]` y escribe el resultado en `x[rd]`.
 
 * _OR Immediate_
-* **Operación**: $\texttt{x\[rd\] = x\[rs1\] \| sext\(immediate\)}$
-* **Tipo**: $\texttt{R}$
+* **Operación**: x\[rd\] $$=$$ x\[rs1\] $$|$$ sext\(immediate\)
+* **Tipo**: R
 
 **Uso**
 
@@ -894,11 +896,11 @@ ori rd, rs1, immediate
 
 ## rem
 
-Divide $\texttt{x\[rs1\]}$ entre $\texttt{x\[rs2\]}$, redondeando hacia cero, tratando los valores como números de complemento a dos, y escribe el residuo en $\texttt{f\[rd\]}$.
+Divide$\texttt{`x[rs1]` entre `x[rs2]`, redondeando hacia cero, tratando los valores como números de complemento a dos, y escribe el residuo en `f[rd]`.
 
 * _Remainder_
-* **Operación**: $\texttt{x\[rd\] = x\[rs1\] \%}$$\_s$ $\texttt{x\[rs2\]}$
-* **Tipo**: $\texttt{R}$
+* **Operación**: x\[rd\] $$=$$ x\[rs1\] $$\%_s$$ x\[rs2\]
+* **Tipo**: R
 
 **Uso**
 
@@ -908,11 +910,11 @@ rem rd, rs1, rs2
 
 ## remu
 
-Divide $\texttt{x\[rs1\]}$ entre $\texttt{x\[rs2\]}$, redondeando hacia cero, tratando los valores como números sin signo, y escribe el residuo en $\texttt{f\[rd\]}$.
+Divide `x[rs1]` entre `x[rs2]`, redondeando hacia cero, tratando los valores como números sin signo, y escribe el residuo en `f[rd]`.
 
 * _Remainder, Unsigned_
-* **Operación**: $\texttt{x\[rd\] = x\[rs1\] \%}$$\_u$ $\texttt{x\[rs2\]}$
-* **Tipo**: $\texttt{R}$
+* **Operación**: x\[rd\] $$=$$ x\[rs1\] $$\%_u$$ x\[rs2\]
+* **Tipo**: R
 
 **Uso**
 
@@ -922,11 +924,11 @@ remu rd, rs1, rs2
 
 ## sb
 
-Almacena el byte menos significativo del registro $\texttt{x\[rs2\]}$ a memoria en la dirección $\texttt{x\[rs1\] + sign-extend\(offset\)}$.
+Almacena el byte menos significativo del registro `x[rs2]` a memoria en la dirección `x[rs1] + sign-extend(offset)`.
 
 * _Store Byte_
-* **Operación**: $\texttt{M\[x\[rs1\] + sext\(offset\)\] = x\[rs2\]\[7:0\]}$
-* **Tipo**: $\texttt{S}$
+* **Operación**: M\[x\[rs1\] $$+$$ sext\(offset\)\] $$=$$ x\[rs2\]\[7:0\]
+* **Tipo**: S
 
 **Uso**
 
@@ -936,11 +938,11 @@ sb rs2, offset(rs1)
 
 ## sh
 
-Almacena los dos bytes menos significativos del registro $\texttt{x\[rs2\]}$ a memoria en la dirección $\texttt{x\[rs1\] + sign-extend\(offset\)}$.
+Almacena los dos bytes menos significativos del registro `x[rs2]` a memoria en la dirección `x[rs1] + sign-extend(offset)`.
 
 * _Store Halfword_
-* **Operación**: $\texttt{M\[x\[rs1\] + sext\(offset\)\] = x\[rs2\]\[15:0\]}$
-* **Tipo**: $\texttt{S}$
+* **Operación**: M\[x\[rs1\] $$+$$ sext\(offset\)\] $$=$$ x\[rs2\]\[15:0\]
+* **Tipo**: S
 
 **Uso**
 
@@ -950,11 +952,11 @@ sh rs2, offset(rs1)
 
 ## sll
 
-Corre el registro $\texttt{x\[rs1\]}$ a la izquierda por $\texttt{x\[rs2\]}$ posiciones de bits. Los bits liberados son reemplazados por ceros, y el resultado es escrito en $\texttt{x\[rd\]}$. Los cinco bits menos significativos de $\texttt{x\[rs2\]}$ \(o seis bits para $\texttt{RV64I}$\) forman la cantidad a correr; los bits altos son ignorados.
+Corre el registro `x[rs1]` a la izquierda por `x[rs2]` posiciones de bits. Los bits liberados son reemplazados por ceros, y el resultado es escrito en `x[rd]`. Los cinco bits menos significativos de `x[rs2]` \(o seis bits para `RV64I`\) forman la cantidad a correr; los bits altos son ignorados.
 
 * _Shift Left Logical_
-* **Operación**: $\texttt{x\[rd\] = x\[rs1\] &lt;&lt; x\[rs2\]}$
-* **Tipo**: $\texttt{R}$
+* **Operación**: x\[rd\] $$=$$ x\[rs1\] $$<<$$ x\[rs2\]
+* **Tipo**: R
 
 **Uso**
 
@@ -964,11 +966,13 @@ sll rd, rs1, rs2
 
 ## slli
 
-Corre el registro $\texttt{x\[rs1\]}$ a la izquierda por $\texttt{shamt}$ posiciones de bits. Los bits liberados son reemplazados por ceros, y el resultado es escrito en $\texttt{x\[rd\]}$. Para $\texttt{RV32I}$, la instrucción solo es legal cuando $\texttt{shamt\[5\]=0}$. Forma comprimida: **$\texttt{c.slli}$** $\texttt{ rd, shamt}$
+Corre el registro `x[rs1]` a la izquierda por `shamt` posiciones de bits. Los bits liberados son reemplazados por ceros, y el resultado es escrito en `x[rd]`. Para `RV32I`, la instrucción solo es legal cuando `shamt[5]=0`. 
+
+Forma comprimida: **`c.slli`** `rd, shamt`
 
 * _Shift Left Logical Immediate_
-* **Operación**: $\texttt{x\[rd\] = x\[rs1\] &lt;&lt; shamt}$.
-* **Tipo**: $\texttt{I}$
+* **Operación**: x\[rd\] $$=$$ x\[rs1\] $$<<$$ shamt
+* **Tipo**: I
 
 **Uso**
 
@@ -978,11 +982,11 @@ slli rd, rs1, shamt
 
 ## slt
 
-Compara $\texttt{x\[rs1\]}$ con $\texttt{x\[rs2\]}$ como números de complemento a dos, y escribe $\texttt{1}$ en $\texttt{x\[rd\]}$ si $\texttt{x\[rs1\]}$ es menor, ó 0 si no.
+Compara `x[rs1]` con `x[rs2]` como números de complemento a dos, y escribe  en $\texttt{`x[rd]` si `x[rs1]` es menor, ó `0` si no.
 
 * _Set if Less Than_
-* **Operación**: $\texttt{x\[rd\] = x\[rs1\] &lt;}$ $\_s$ $\texttt{x\[rs2\]}$
-* **Tipo**: $\texttt{R}$
+* **Operación**: x\[rd\] $$=$$ x\[rs1\] $$<_s$$ x\[rs2\]
+* **Tipo**: R
 
 **Uso**
 
@@ -992,11 +996,11 @@ slt rd, rs1, rs2
 
 ## slti
 
-Compara $\texttt{x\[rs1\]}$ con el $\texttt{inmediato sign-extended}$ como números de complemento a dos, y escribe $\texttt{1}$ en $\texttt{x\[rd\]}$ si $\texttt{x\[rs1\]}$ es menor, ó 0 si no.
+Compara `x[rs1]` con el `immediate sign-extended` como números de complemento a dos, y escribe `1` en `x[rd]` si `x[rs1]` es menor, ó `0` si no.
 
 * _Set if Less Than Immediate_
-* **Operación**: $\texttt{x\[rd\] = x\[rs1\] &lt;}$ $\_s$ $\texttt{sext\(immediate\)}$
-* **Tipo**: $\texttt{I}$
+* **Operación**: x\[rd\] $$=$$ x\[rs1\] $$<_s$$ sext\(immediate\)
+* **Tipo**: I
 
 **Uso**
 
@@ -1006,11 +1010,11 @@ slti rd, rs1, immediate
 
 ## sltiu
 
-Compara $\texttt{x\[rs1\]}$ con el $\texttt{inmediato sign-extended}$ como números sin signo, y escribe $\texttt{1}$ en $\texttt{x\[rd\]}$ si $\texttt{x\[rs1\]}$ es menor, ó 0 si no.
+Compara `x[rs1]` con el `immediate sign-extended` como números sin signo, y escribe `1` en `x[rd]` si `x[rs1]` es menor, ó `0` si no.
 
 * _Set if Less Than Immediate, Unsigned_
-* **Operación**: $\texttt{x\[rd\] = x\[rs1\] &lt;}$ $\_u$ $\texttt{sext\(immediate\)}$
-* **Tipo**: $\texttt{I}$
+* **Operación**: x\[rd\] $$=$$ x\[rs1\] $$<_u$$ sext\(immediate\)
+* **Tipo**: I
 
 **Uso**
 
@@ -1020,11 +1024,11 @@ sltiu rd, rs1, immediate
 
 ## sltu
 
-Compara $\texttt{x\[rs1\]}$ con $\texttt{x\[rs2\]}$ como números sin signo, y escribe $\texttt{1}$ en $\texttt{x\[rd\]}$ si $\texttt{x\[rs1\]}$ es menor, ó 0 si no.
+Compara `x[rs1]` con `x[rs2]` como números sin signo, y escribe `1` en `x[rd]` si `x[rs1]` es menor, ó `0` si no.
 
 * _Set if Less Than, Unsigned_
-* **Operación**: $\texttt{x\[rd\] = x\[rs1\] &lt;}$ $\_u$ $\texttt{x\[rs2\]}$
-* **Tipo**: $\texttt{R}$
+* **Operación**: x\[rd\] $$=$$ x\[rs1\] $$<_u$$ x\[rs2\]
+* **Tipo**: R
 
 **Uso**
 
@@ -1034,11 +1038,11 @@ sltu rd, rs1, rs2
 
 ## sra
 
-Corre el registro $\texttt{x\[rs1\]}$ a la derecha por $\texttt{x\[rs2\]}$ posiciones de bits. Los bits liberados son reemplazados por copias del bit más significativo de $\texttt{x\[rs1\]}$, y el resultado es escrito en $\texttt{x\[rd\]}$. Los cinco bits menos significativos de $\texttt{x\[rs2\]}$ \(o seis bits para $\texttt{RV64I}$\) forman la cantidad a correr; los bits altos son ignorados.
+Corre el registro `x[rs1]` a la derecha por`x[rs2]` posiciones de bits. Los bits liberados son reemplazados por copias del bit más significativo de `x[rs1]`, y el resultado es escrito en `x[rd]`. Los cinco bits menos significativos de `x[rs2]` \(o seis bits para `RV64I`\) forman la cantidad a correr; los bits altos son ignorados.
 
 * _Shift Right Arithmetic_
-* **Operación**: $\texttt{x\[rd\] = x\[rs1\] &gt;&gt;}$$\_s$ $\texttt{x\[rs2\]}$
-* **Tipo**: $\texttt{R}$
+* **Operación**: x\[rd\] $$=$$ x\[rs1\] $$>>_s$$ x\[rs2\]
+* **Tipo**: R
 
 **Uso**
 
@@ -1048,11 +1052,13 @@ sra rd, rs1, rs2
 
 ## srai
 
-Corre el registro $\texttt{x\[rs1\]}$ a la derecha por $\texttt{shamt}$ posiciones de bits. Los bits liberados son reemplazados por copias del bit más significativo de $\texttt{x\[rs1\]}$, y el resultado es escrito en $\texttt{x\[rd\]}$. Para $\texttt{RV32I}$, la instrucción solo es legal cuando $\texttt{shamt\[5\]=0}$. Forma comprimida: **$\texttt{c.srai}$** $\texttt{ rd, shamt}$.
+Corre el registro `x[rs1]` a la derecha por `shamt` posiciones de bits. Los bits liberados son reemplazados por copias del bit más significativo de `x[rs1]`, y el resultado es escrito en `x[rd]`. Para `RV32I`, la instrucción solo es legal cuando `shamt[5]=0`. 
+
+Forma comprimida: **`c.srai`**`rd, shamt`.
 
 * _Shift Right Arithmetic Immediate_
-* **Operación**: $\texttt{x\[rd\] = x\[rs1\] &gt;&gt;}$$\_s$ $\texttt{shamt}$
-* **Tipo**: $\texttt{I}$
+* **Operación**: x\[rd\] $$=$$ x\[rs1\] $$>>_s$$ shamt
+* **Tipo**: I
 
 **Uso**
 
@@ -1062,11 +1068,11 @@ srai rd, rs1, shamt
 
 ## srl
 
-Corre el registro $\texttt{x\[rs1\]}$ a la derecha por $\texttt{x\[rs2\]}$ posiciones de bits. Los bits liberados son reemplazados por ceros ceros, y el resultado es escrito en $\texttt{x\[rd\]}$. Los cinco bits menos significativos de $\texttt{x\[rs2\]}$ \(o seis bits para $\texttt{RV64I}$\) forman la cantidad a correr; los bits altos son ignorados.
+Corre el registro `x[rs1]` a la derecha por `x[rs2]` posiciones de bits. Los bits liberados son reemplazados por ceros ceros, y el resultado es escrito en `x[rd]`. Los cinco bits menos significativos de `x[rs2]` \(o seis bits para `RV64I`\) forman la cantidad a correr; los bits altos son ignorados.
 
 * _Shift Right Logical_
-* **Operación**: $\texttt{x\[rd\] = x\[rs1\] &gt;&gt;}$$\_u$ $\texttt{x\[rs2\]}$
-* **Tipo**: $\texttt{R}$
+* **Operación**: x\[rd\] $$=$$ x\[rs1\] $$>>_u$$ x\[rs2\]
+* **Tipo**: R
 
 **Uso**
 
@@ -1076,11 +1082,13 @@ srl rd, rs1, rs2
 
 ## srli
 
-Corre el registro $\texttt{x\[rs1\]}$ a la derecha por $\texttt{shamt}$ posiciones de bits. Los bits liberados son reemplazados por ceros, y el resultado es escrito en $\texttt{x\[rd\]}$. Para $\texttt{RV32I}$, la instrucción solo es legal cuando $\texttt{shamt\[5\]=0}$. Forma comprimida: **$\texttt{c.srli}$** $\texttt{ rd, shamt}$.
+Corre el registro `x[rs1]` a la derecha por `shamt` posiciones de bits. Los bits liberados son reemplazados por ceros, y el resultado es escrito en `x[rd]`. Para `RV32I`, la instrucción solo es legal cuando `shamt[5]=0`. 
+
+Forma comprimida: **`c.srli`** `rd, shamt`.
 
 * _Shift Right Logical Immediate_
-* **Operación**: $\texttt{x\[rd\] = x\[rs1\] &gt;&gt;}$$\_u$ $\texttt{shamt}$
-* **Tipo**: $\texttt{I}$
+* **Operación**: x\[rd\] $$=$$ x\[rs1\] $$>>_u$$ shamt
+* **Tipo**: I
 
 **Uso**
 
@@ -1090,11 +1098,13 @@ srli rd, rs1, shamt
 
 ## sub
 
-Resta el registro $\texttt{x\[rs2\]}$ del registro $\texttt{x\[rs1\]}$, trunca el resultado a 32 bits, y escribe el resultado de 32 bits, sign-extended, en $\texttt{x\[rd\]}$. Overflow aritmético ignorado. Forma comprimida: **$\texttt{c.sub}$** $\texttt{ rd, rs2}$.
+Resta el registro `x[rs2]` del registro `x[rs1]`, trunca el resultado a 32 bits, y escribe el resultado de 32 bits, sign-extended, en `x[rd]`. Overflow aritmético ignorado. 
+
+Forma comprimida: **`c.sub`** `rd, rs`.
 
 * _Subtract_
-* **Operación**: $\texttt{x\[rd\] = x\[rs1\] - x\[rs2\]}$
-* **Tipo**: $\texttt{R}$
+* **Operación**: $\texttt{x\[rd\] $$=$$ x\[rs1\] $$-$$ x\[rs2\]
+* **Tipo**: R
 
 **Uso**
 
@@ -1104,11 +1114,13 @@ sub rd, rs1, rs2
 
 ## sw
 
-Almacena los cuatro bytes menos significativos del registro $\texttt{x\[rs2\]}$ a memoria en la dirección $\texttt{x\[rs1\] + sign-extend\(offset\)}$. Formas comprimidas: **$\texttt{c.swsp}$** $\texttt{ p rs2, offset}$; **$\texttt{c.sw}$** $\texttt{ rs2, offset\(rs1\)}$.
+Almacena los cuatro bytes menos significativos del registro `x[rs2]` a memoria en la dirección `x[rs1] + sign-extend(offset)`. 
+
+Formas comprimidas: **`c.swsp`** `rs2, offset`; **`c.sw`** `rs2, offset(rs1)`.
 
 * _Store Word_
-* **Operación**: $\texttt{M\[x\[rs1\] + sext\(offset\)\] = x\[rs2\]\[31:0\]}$
-* **Tipo**: $\texttt{S}$
+* **Operación**: M\[x\[rs1\] $$+$$ sext\(offset\)\] $$=$$ x\[rs2\]\[31:0\]
+* **Tipo**: S
 
 **Uso**
 
@@ -1118,11 +1130,13 @@ sw rs2, offset(rs1)
 
 ## xor
 
-Calcula el $\texttt{OR}$ exclusivo a nivel de bits de los registros $\texttt{x\[rs1\]}$ y $\texttt{x\[rs2\]}$ y escribe el resultado en $\texttt{x\[rd\]}$. Formas comprimidas: **$\texttt{c.xor}$** $\texttt{ rd, rs2}$
+Calcula el `OR` exclusivo a nivel de bits de los registros `x[rs1]` y `x[rs2]` y escribe el resultado en `x[rd]`. 
+
+Forma comprimida: **`c.xor`** `rd, rs2`
 
 * _Exclusive-OR_
-* **Operación**: $\texttt{x\[rd\] = x\[rs1\] ˆ x\[rs2\]}$
-* **Tipo**: $\texttt{R}$
+* **Operación**: x\[rd\] $$=$$ x\[rs1\] $$ˆ$$ x\[rs2\]
+* **Tipo**: R
 
 **Uso**
 
@@ -1130,15 +1144,13 @@ Calcula el $\texttt{OR}$ exclusivo a nivel de bits de los registros $\texttt{x\[
 xor rd, rs1, rs2
 ```
 
-\`\`
-
 ## xori
 
-Calcula el $\texttt{OR}$ exclusivo a nivel de bits del $\texttt{inmediato sign-extended}$ y el registro $\texttt{x\[rs1\]}$ y escribe el resultado en $\texttt{x\[rd\]}$.
+Calcula el `OR` exclusivo a nivel de bits del `immediate sign-extended` y el registro `x[rs1]` y escribe el resultado en `x[rd]`.
 
 * _Exclusive-OR Immediate_
-* **Operación**: $\texttt{x\[rd\] = x\[rs1\] ˆ sext\(immediate\)}$
-* **Tipo**: $\texttt{R}$
+* **Operación**: x\[rd\] $$=$$ x\[rs1\] $$ˆ$$ sext\(immediate\)
+* **Tipo**: R
 
 **Uso**
 
