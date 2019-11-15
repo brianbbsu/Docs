@@ -16,11 +16,11 @@ add rd, rs1, rs2
 
 ## addi
 
-Suma el inmediato sign-extended al registro $\texttt{x\[rs1\]}$ y escribe el resultado en $\texttt{x\[rd\]}$. Overflow aritmético ignorado.
+Suma el inmediato sign-extended al registro `x[rs1]` y escribe el resultado en `x[rd]`. Overflow aritmético ignorado.
 
 * _Add Immediate_
-* **Operación**: $\texttt{x\[rd\] = x\[rs1\] + sext\(immediate\)}$
-* **Tipo**: $\texttt{I}$
+* **Operación**: x\[rd\] = x\[rs1\] + sext\(immediate\)
+* **Tipo**: I
 
 **Uso**
 
@@ -30,11 +30,11 @@ addi rd, rs1, immediate
 
 ## and
 
-Calcula el AND a nivel de bits de los registros $\texttt{x\[rs1\]}$ y $\texttt{x\[rs2\]}$ y escribe el resultado en $\texttt{x\[rd\]}$.
+Calcula el AND a nivel de bits de los registros `x[rs1]` y `x[rs2]` y escribe el resultado en `x[rd]`.
 
 * _AND_
-* **Operación**: $\texttt{x\[rd\] = x\[rs1\] \& x\[rs2\]}$
-* **Tipo**: $\texttt{R}$
+* **Operación**: x\[rd\] = x\[rs1\] & x\[rs2\]
+* **Tipo**: R
 
 **Uso**
 
@@ -44,11 +44,11 @@ and rd, rs1, rs2
 
 ## andi
 
-Calcula el AND a nivel de bits del inmediato sign-extended y el registro $\texttt{x\[rs1\]}$ y escribe el resultado en $\texttt{x\[rd\]}$.
+Calcula el AND a nivel de bits del inmediato sign-extended y el registro `x[rs1]` y escribe el resultado en `x[rd]`.
 
 * _AND Immediate_
-* **Operación**: $\texttt{x\[rd\] = x\[rs1\] \& sext\(immediate\)}$
-* **Tipo**: $\texttt{I}$
+* **Operación**: x\[rd\] = x\[rs1\] & sext\(immediate\)
+* **Tipo**: I
 
 **Uso**
 
@@ -58,11 +58,11 @@ andi rd, rs1, immediate
 
 ## auipc
 
-Suma el inmediato sign-extended de 20 bits, corrido a la izquierda por 12 bits, al $\texttt{pc}$, y escribe el resultado en $\texttt{x\[rd\]}$.
+Suma el inmediato sign-extended de 20 bits, corrido a la izquierda por 12 bits, al `pc`, y escribe el resultado en `x[rd]`.
 
 * _AND Immediate_
-* **Operación**: $\texttt{x\[rd\] = pc + sext\(immediate\[31:12\] &lt;&lt; 12\)}$
-* **Tipo**: $\texttt{U}$
+* **Operación**: x\[rd\] = pc + sext\(immediate\[31:12\] $$<<$$ 12\)
+* **Tipo**: U
 
 **Uso**
 
@@ -72,11 +72,11 @@ auipc rd, immediate
 
 ## beq
 
-Si el registro $\texttt{x\[rs1\]}$ es igual al registro $\texttt{x\[rs2\]}$, asignar al $\texttt{pc}$ su valor actual más el $\texttt{offset}$ sign-extended.
+Si el registro `x[rs1]` es igual al registro `x[rs2]`, asignar al `pc` su valor actual más el `offset` sign-extended.
 
 * _Branch if Equal_
-* **Operación**: $\texttt{if \(rs1 == rs2\) pc += sext\(offset\)}$
-* **Tipo**: $\texttt{B}$
+* **Operación**: if \(rs1 $$==$$ rs2\) pc $$+=$$ sext\(offset\)
+* **Tipo**: B
 
 **Uso**
 
@@ -86,11 +86,11 @@ beq rs1, rs2, offset
 
 ## bge
 
-Si el registro $\texttt{x\[rs1\]}$ es por lo menos $\texttt{x\[rs2\]}$, tratando los valores como números de complemento a dos, asignar al $\texttt{pc}$ su valor actual más el offset sign-extended.
+Si el registro `x[rs1]` es por lo menos `x[rs2]`, tratando los valores como números de complemento a dos, asignar al `pc` su valor actual más el `offset` sign-extended.
 
 * _Branch if Greater Than or Equal_
-* **Operación**: $\texttt{if \(rs1 ≥s rs2\) pc += sext\(offset\)}$
-* **Tipo**: $\texttt{B}$
+* **Operación**: if \(rs1 $$≥_s$$ rs2\) pc $$+=$$ sext\(offset\)
+* **Tipo**: B
 
 **Uso**
 
@@ -100,11 +100,11 @@ bge rs1, rs2, offset
 
 ## bgeu
 
-Si el registro $\texttt{x\[rs1\]}$ es por lo menos $\texttt{x\[rs2\]}$, tratando los valores como números sin signo, asignar al $\texttt{pc}$ su valor actual más el offset sign-extended.
+Si el registro `x[rs1]` es por lo menos `x[rs2]`, tratando los valores como números sin signo, asignar al `pc` su valor actual más el `offset` unsign-extended.
 
 * _Branch if Greater Than or Equal, Unsigned_
-* **Operación**: $\texttt{if \(rs1}$ $&lt;\_u$ $\texttt{rs2\) pc += sext\(offset\)}$
-* **Tipo**: $\texttt{B}$
+* **Operación**: if \(rs1 $$>_u$$ rs2\) pc $$+=$$ sext\(offset\)
+* **Tipo**: B
 
 **Uso**
 
@@ -114,11 +114,11 @@ bgeu rs1, rs2, offset
 
 ## blt
 
-Si el registro $\texttt{x\[rs1\]}$ es menor que $\texttt{x\[rs2\]}$, tratando los valores como números de complemento a dos, asignar al $\texttt{pc}$ su valor actual más el offset sign-extended
+Si el registro `x[rs1]` es menor que `x[rs2]`, tratando los valores como números de complemento a dos, asignar al `pc` su valor actual más el `offset` sign-extended
 
 * _Branch if Less Than_
-* **Operación**: $\texttt{if \(rs1 &lt;s rs2\) pc += sext\(offset\)}$
-* **Tipo**: $\texttt{B}$
+* **Operación**: if \(rs1 $$<_s$$ rs2\) pc $$+=$$ sext\(offset\)
+* **Tipo**: B
 
 **Uso**
 
@@ -128,11 +128,11 @@ blt rs1, rs2, offset
 
 ## bltu
 
-Si el registro $\texttt{x\[rs1\]}$ es menor que $\texttt{x\[rs2\]}$, tratando los valores como números sin signo, asignar al $\texttt{pc}$ su valor actual más el offset sign-extended.
+Si el registro `x[rs1]` es menor que `x[rs2]`, tratando los valores como números sin signo, asignar al `pc` su valor actual más el `offset` unsign-extended.
 
 * _Branch if Less Than, Unsigned_
-* **Operación**: $\texttt{if \(rs1}$ $&lt;\_u$ $\texttt{rs2\) pc += sext\(offset\)}$
-* **Tipo**: $\texttt{B}$
+* **Operación**: if \(rs1 $$<_u$$ rs2\) pc $$+=$$sext\(offset\)
+* **Tipo**: B
 
 **Uso**
 
@@ -142,11 +142,11 @@ bltu rs1, rs2, offset
 
 ## bne
 
-Si el registro $\texttt{x\[rs1\]}$ no es igual al registro $\texttt{x\[rs2\]}$, asignar al $\texttt{pc}$ su valor actual más el offset sign-extended.
+Si el registro `x[rs1]` no es igual al registro `x[rs2]`, asignar al `pc` su valor actual más el `offset` sign-extended.
 
 * _Branch if Not Equal_
-* **Operación**: $\texttt{if \(rs1}$ $\neq$ $\texttt{rs2\) pc += sext\(offset\)}$
-* **Tipo**: $\texttt{B}$
+* **Operación**: if \(rs1 $$≠_s$$rs2\) pc $$+=$$ sext\(offset\)
+* **Tipo**: B
 
 **Uso**
 
@@ -156,11 +156,11 @@ bne rs1, rs2, offset
 
 ## csrrc
 
-Setea en $\texttt{t}$ el valor del control and status register $\texttt{csr}$. Escribe el $\texttt{AND}$ a nivel de bits de $\texttt{t}$ y el complemento a uno de $\texttt{x\[rs1\]}$ en el $\texttt{csr}$, luego escribe $\texttt{t}$ en el $\texttt{x\[rd\]}$.
+Setea en `t` el valor del control and status register `csr`. Escribe el `AND` a nivel de bits de `t` y el complemento a uno de `x[rs1]` en el `csr`, luego escribe `t` en el `x[rd]`.
 
 * _Control and Status Register Read and Clear_
-* **Operación**: $\texttt{t = CSRs\[csr\]}$;  $\texttt{CSRs\[csr\] = t}$ &∼$\texttt{x\[rs1\]}$;  $\texttt{x\[rd\] = t}$
-* **Tipo**: $\texttt{I}$
+* **Operación**: t = CSRs\[csr\];  CSRs\[csr\] = t  & $$∼$$x\[rs1\];  x\[rd\] = t
+* **Tipo**: I
 
 **Uso**
 
@@ -170,11 +170,11 @@ csrrc rd, csr, rs1
 
 ## csrrci
 
-Setea en $\texttt{t}$ el valor del control and status register $\texttt{csr}$. Escribe el $\texttt{AND}$ a nivel de bits de $\texttt{t}$ y el complemento a uno del inmediato de cinco bits zero-extended $\texttt{zimm}$ en el $\texttt{csr}$, luego escribe $\texttt{t}$ en el $\texttt{x\[rd\]}$ \(Los bits del 5 en adelante en el csr no son modificados\).
+Setea en `t` el valor del control and status register `csr`. Escribe el `AND` a nivel de bits de `t` y el complemento a uno del inmediato de cinco bits zero-extended `zimm` en el `csr`, luego escribe `t` en el `x[rd]` \(Los bits del 5 en adelante en el csr no son modificados\).
 
 * _Control and Status Register Read and Clear Immediate_
-* **Operación**: $\texttt{t = CSRs\[csr\]}$;  $\texttt{CSRs\[csr\] = t}$ &∼$\texttt{zimm}$;  $\texttt{x\[rd\] = t}$
-* **Tipo**: $\texttt{I}$
+* **Operación**: t = CSRs\[csr\]; CSRs\[csr\] = t  & $$∼$$zimm;  x\[rd\] = t
+* **Tipo**: I
 
 **Uso**
 
@@ -184,11 +184,11 @@ csrrci rd, csr, zimm[4:0]
 
 ## csrrs
 
-Setea en $\texttt{t}$ el valor del control and status register $\texttt{csr}$. Escribe el $\texttt{OR}$ a nivel de bits de $\texttt{t}$ y $\texttt{x\[rs1\]}$ en el $\texttt{csr}$, luego escribe $\texttt{t}$ en el $\texttt{x\[rd\]}$.
+Setea en `t` el valor del control and status register `csr`. Escribe el `OR` a nivel de bits de `t` y `x[rs1]` en el `csr`, luego escribe `t` en el `x[rd]`.
 
 * _Control and Status Register Read and Set_
-* **Operación**: $\texttt{t = CSRs\[csr\]}$;  $\texttt{CSRs\[csr\] = t}$ \| $\texttt{x\[rs1\]}$;  $\texttt{x\[rd\] = t}$
-* **Tipo**: $\texttt{I}$
+* **Operación**: t = CSRs\[csr\];  CSRs\[csr\] = t \| x\[rs1\];  x\[rd\] = t
+* **Tipo**: I
 
 **Uso**
 
@@ -198,11 +198,11 @@ csrrs rd, csr, rs1
 
 ## csrrsi
 
-Setea en $\texttt{t}$ el valor del control and status register $\texttt{csr}$. Escribe el $\texttt{OR}$ a nivel de bits de $\texttt{t}$ y y el inmediato de cinco bits zero-extended $\texttt{zimm}$ en el $\texttt{csr}$, luego escribe $\texttt{t}$ en el $\texttt{x\[rd\]}$ \(Los bits del 5 en adelante en el csr no son modificados\).
+Setea en `t` el valor del control and status register `csr`. Escribe el `OR` a nivel de bits de `t` y y el inmediato de cinco bits zero-extended `zimm` en el `csr`, luego escribe `t` en el `x[rd]` . \(Los bits del 5 en adelante en el csr no son modificados\).
 
 * _Control and Status Register Read and Set Immediate_
-* **Operación**: $\texttt{t = CSRs\[csr\]}$;  $\texttt{CSRs\[csr\] = t}$ \| $\texttt{zimm}$;  $\texttt{x\[rd\] = t}$
-* **Tipo**: $\texttt{I}$
+* **Operación**: t = CSRs\[csr\];  CSRs\[csr\] = t \| zimm;  x\[rd\] = t
+* **Tipo**: I
 
 **Uso**
 
@@ -212,11 +212,11 @@ csrrsi rd, csr, zimm[4:0]
 
 ## csrrw
 
-Setea en $\texttt{t}$ el valor del control and status register $\texttt{csr}$. Copia el valor de $\texttt{x\[rs1\]}$ en el $\texttt{csr}$, luego escribe el valor de $\texttt{t}$ en el $\texttt{x\[rd\]}$.
+Setea en `t` el valor del control and status register `csr`. Copia el valor de `x[rs1]` en el `csr`, luego escribe el valor de `t` en el `x[rd]`.
 
 * _Control and Status Register Read and Write_
-* **Operación**: $\texttt{t = CSRs\[csr\]}$;  $\texttt{CSRs\[csr\] = x\[rs1\]}$;  $\texttt{x\[rd\] = t}$
-* **Tipo**: $\texttt{I}$
+* **Operación**: t = CSRs\[csr;  CSRs\[csr\] = x\[rs1\];  x\[rd\] = t
+* **Tipo**: I
 
 **Uso**
 
@@ -226,11 +226,11 @@ csrrw rd, csr, rs1
 
 ## csrrwi
 
-Copia el valor del control and status register $\texttt{csr}$ en $\texttt{x\[rd\]}$, luego escribe el inmediato de cinco bits zero-extended $\texttt{zimm}$ en el $\texttt{csr}$.
+Copia el valor del control and status register `csr` en `x[rd]`, luego escribe el inmediato de cinco bits zero-extended `zimm` en el `csr`.
 
 * _Control and Status Register Read and Write Immediate_
-* **Operación**: $\texttt{x\[rd\] = CSRs\[csr\]}$;  $\texttt{ CSRs\[csr\] = zimm}$
-* **Tipo**: $\texttt{I}$
+* **Operación**: x\[rd\] = CSRs\[csr\];  CSRs\[csr\] = zimm
+* **Tipo**: I
 
 **Uso**
 
@@ -240,11 +240,11 @@ csrrwi rd, csr, zimm[4:0]
 
 ## div
 
-Divide $\texttt{x\[rs1\]}$ entre $\texttt{x\[rs2\]}$, redondeando hacia cero, tratando los valores como números de complemento a dos, y escribe el cociente en $\texttt{x\[rd\]}$.
+Divide `x[rs1]` entre `x[rs2]`, redondeando hacia cero, tratando los valores como números de complemento a dos, y escribe el cociente en `x[rd]`.
 
 * _Divide_
-* **Operación**: $\texttt{x\[rd\] = x\[rs1\]}$ $÷\_s$ $\texttt{x\[rs2\]}$
-* **Tipo**: $\texttt{R}$
+* **Operación**: x\[rd\] = x\[rs1\] $$÷_s$$ x\[rs2\]
+* **Tipo**: R
 
 **Uso**
 
@@ -254,11 +254,11 @@ div rd, rs1, rs2
 
 ## divu
 
-Divide $\texttt{x\[rs1\]}$ entre $\texttt{x\[rs2\]}$, redondeando hacia cero, tratando los valores como números sin signo, y escribe el cociente en $\texttt{x\[rd\]}$.
+Divide `x[rs1]` entre `x[rs2]`, redondeando hacia cero, tratando los valores como números sin signo, y escribe el cociente en `x[rd]`.
 
 * _Divide, Unsigned_
-* **Operación**: $\texttt{x\[rd\] = x\[rs1\]}$ $÷\_u$ $\texttt{x\[rs2\]}$
-* **Tipo**: $\texttt{R}$
+* **Operación**: x\[rd\] = x\[rs1\] $$÷_u$$ x\[rs2\]
+* **Tipo**: R
 
 **Uso**
 
@@ -268,11 +268,11 @@ divu rd, rs1, rs2
 
 ## ebreak
 
-Hace una petición del debugger levantando una excepción de $\texttt{Breakpoint}$.
+Hace una petición del debugger levantando una excepción de `Breakpoint`.
 
 * _Environment Breakpoint_
-* **Operación**: $\texttt{RaiseException\(Breakpoint\)}$
-* **Tipo**: $\texttt{I}$
+* **Operación**: RaiseException\(Breakpoint\)
+* **Tipo**: I
 
 **Uso**
 
@@ -282,11 +282,11 @@ ebreak
 
 ## ecall
 
-Hace una petición del ambiente de ejecución levantando una excepción de $\texttt{Environment Call}$.
+Hace una petición del ambiente de ejecución levantando una excepción de `Environment Call`.
 
 * _Environment Call_
-* **Operación**: $\texttt{RaiseException\(EnvironmentCall\)}$
-* **Tipo**: $\texttt{I}$
+* **Operación**: RaiseException\(EnvironmentCall\)
+* **Tipo**: I
 
 **Uso**
 
