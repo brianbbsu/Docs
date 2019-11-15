@@ -296,11 +296,11 @@ ecall
 
 ## fadd.s
 
-Suma los números de punto flotante de precisión simple de los regristros $\texttt{f\[rs1\]}$ y $\texttt{f\[rs2\]}$ y escribe la suma redondeada de precisión simple en $\texttt{f\[rd\]}$.
+Suma los números de punto flotante de precisión simple de los registros `f[rs1]` y `f[rs2]` y escribe la suma redondeada de precisión simple en `f[rd]`.
 
 * _Floating-point Add, Single-Precision_
-* **Operación**: $\texttt{f\[rd\] = f\[rs1\] + f\[rs2\]}$
-* **Tipo**: $\texttt{R}$
+* **Operación**: f\[rd\]$$=$$ f\[rs1\] $$+$$ f\[rs2\]
+* **Tipo**: R
 
 **Uso**
 
@@ -310,24 +310,23 @@ fadd.s rd, rs1, rs2
 
 ## fclass.s
 
-Escribe en $\texttt{x\[rd\]}$ una máscara que indica la clase del número de punto flotante de precisión simple en $\texttt{f\[rs1\]}$. Exactamente un bit en $\texttt{x\[rd\]}$ es puesto en $\texttt{1}$, de acuerdo a la siguiente tabla:
+Escribe en `x[rd]` una máscara que indica la clase del número de punto flotante de precisión simple en `f[rs1]`. Exactamente un bit en `x[rd]` es puesto en `1`, de acuerdo a la siguiente tabla:
 
-| Bit en $\texttt{x\[rd\]}$ | Significado |
+| Bit en `x[rd]` | Significado |
 | :--- | :--- |
-| 0 | $\texttt{f\[rs1\]}$ es $\texttt{-}$$\infty$ |
-| 1 | $\texttt{f\[rs1\]}$ es un número negativo normal |
-| 2 | $\texttt{f\[rs1\]}$ es un número negativo subnormal |
-| 3 | $\texttt{f\[rs1\]}$ es $\texttt{-}0$ |
-| 4 | $\texttt{f\[rs1\]}$ es $\texttt{+}0$ |
-| 5 | $\texttt{f\[rs1\]}$ es un número positivo subnormal |
-| 6 | $\texttt{f\[rs1\]}$ es un número positivo normal |
-| 7 | $\texttt{f\[rs1\]}$ es $\texttt{+}$$\infty$ |
-| 8 | $\texttt{f\[rs1\]}$ es un $\texttt{NaN}$ señalizado |
-| 8 | $\texttt{f\[rs1\]}$ es un $\texttt{NaN}$ simple |
+| 0 | `f[rs1]` es $$-∞$$  |
+| 1 | `f[rs1]` es un número negativo normal |
+| 2 | `f[rs1]` es un número negativo subnormal |
+| 3 | `f[rs1]` es $$-0$$  |
+| 4 | `f[rs1]` es $$+0$$  |
+| 5 | `f[rs1]` es un número positivo subnormal |
+| 6 | `f[rs1]` es un número positivo normal |
+| 7 | `f[rs1]` es $$+∞$$  |
+| 8 | `f[rs1]` es un $$NaN$$simple |
 
 * _Floating-point Classify, Single-Precision_
-* **Operación**: $\texttt{x\[rd\] = }$ $classify\_s$ $\texttt{\(f\[rs1\]\)}$
-* **Tipo**: $\texttt{R}$
+* **Operación**: x\[rd\] = $$classify_s$$\(f\[rs1\]\)
+* **Tipo**: R
 
 **Uso**
 
@@ -337,11 +336,11 @@ fclass.s rd, rs1, rs2
 
 ## fcvt.s.w
 
-Convierte el entero de 32 bits de complemento a dos en $\texttt{x\[rs1\]}$ en un número de punto flotante de precisión simple y lo escribe en $\texttt{f\[rd\]}$.
+Convierte el entero de 32 bits de complemento a dos en `x[rs1]` en un número de punto flotante de precisión simple y lo escribe en `f[rd]`.
 
 * _Floating-point Convert to Single from Word_
-* **Operación**: $\texttt{f\[rd\] = f32}$ $\_{s32}$ $\texttt{\(x\[rs1\]\)}$
-* **Tipo**: $\texttt{R}$
+* **Operación**: f\[rd\] = f32 $$_{s32}$$ \(x\[rs1\]\)
+* **Tipo**: R
 
 **Uso**
 
@@ -351,11 +350,11 @@ fcvt.s.w rd, rs1, rs2
 
 ## fcvt.s.wu
 
-Convierte el entero de 32 bits sin signo en $\texttt{x\[rs1\]}$ en un número de punto flotante de precisión simple y lo escribe en $\texttt{f\[rd\]}$.
+Convierte el entero de 32 bits sin signo en `x[rs1]` en un número de punto flotante de precisión simple y lo escribe en `f[rd]`.
 
 * _Floating-point Convert to Single from Unsigned Word_
-* **Operación**: $\texttt{f\[rd\] = f32}$ $\_{u32}$ $\texttt{\(x\[rs1\]\)}$
-* **Tipo**: $\texttt{R}$
+* **Operación**: f\[rd\] = f32 $$_{u32}$$ \(x\[rs1\]\)
+* **Tipo**: R
 
 **Uso**
 
@@ -365,11 +364,11 @@ fcvt.s.wu rd, rs1, rs2
 
 ## fcvt.w.s
 
-Convierte el número de punto flotante de precisión simple en el registro $\texttt{f\[rs1\]}$ en un entero de 32 bits de complemento a dos y escribe el resultado sign-extended en $\texttt{x\[rd\]}$.
+Convierte el número de punto flotante de precisión simple en el registro `f[rs1]` en un entero de 32 bits de complemento a dos y escribe el resultado sign-extended en `x[rd]`.
 
 * _Floating-point Convert to Word from Single_
-* **Operación**: $\texttt{x\[rd\] = sext\(s32}$ $\_{f32}$ $\texttt{\(f\[rs1\]\)\)}$
-* **Tipo**: $\texttt{R}$
+* **Operación**: x\[rd\] = sext\(s32 $$_{f32}$$ \(f\[rs1\]\)\)
+* **Tipo**: R
 
 **Uso**
 
@@ -379,11 +378,11 @@ fcvt.w.s rd, rs1, rs2
 
 ## fcvt.wu.s
 
-Convierte el número de punto flotante de precisión simple en el registro $\texttt{f\[rs1\]}$ en un entero de 32 bits sin signo y escribe el resultado sign-extended en $\texttt{x\[rd\]}$.
+Convierte el número de punto flotante de precisión simple en el registro `f[rs1]` en un entero de 32 bits sin signo y escribe el resultado sign-extended en `x[rd]`.
 
 * _Floating-point Convert to Unsigned Word from Single_
-* **Operación**: $\texttt{x\[rd\] = sext\(u32}$ $\_{f32}$ $\texttt{\(f\[rs1\]\)\)}$
-* **Tipo**: $\texttt{R}$
+* **Operación**: x\[rd\] = sext\(u32 $$_{f32}$$ \(f\[rs1\]\)\)
+* **Tipo**: R
 
 **Uso**
 
@@ -393,11 +392,11 @@ fcvt.wu.s rd, rs1, rs2
 
 ## fdiv.s
 
-Divide el número de punto flotante de precisión simple en el registro $\texttt{f\[rs1\]}$ entre $\texttt{f\[rs2\]}$ y escribe el cociente redondeado de precisión simple en $\texttt{f\[rd\]}$.
+Divide el número de punto flotante de precisión simple en el registro `f[rs1]` entre `f[rs2]` y escribe el cociente redondeado de precisión simple en `f[rd]`.
 
 * _Floating-point Divide, Single-Precision_
-* **Operación**: $\texttt{f\[rd\] = f\[rs1\]}$ $÷$ $\texttt{f\[rs2\]}$
-* **Tipo**: $\texttt{R}$
+* **Operación**: f\[rd\] = f\[rs1\] $$÷$$ f\[rs2\]
+* **Tipo**: R
 
 **Uso**
 
@@ -407,11 +406,11 @@ fdiv.s rd, rs1, rs2
 
 ## fence
 
-Vuelve los accesos previos a memoria e I/O en el conjunto $\texttt{predecessor}$ observables a otros threads y dispositivos antes de que los accesos subsiguientes a memoria e I/O en el conjunto $\texttt{successor}$ sean observables. Los bits 3, 2, 1 y 0 en estos conjuntos corresponden a $\texttt{device input, device output, memory reads}$ y $\texttt{memory writes}$, respectivamente. La instrucción $\texttt{fence r, rw}$ por ejemplo, ordena lecturas más antiguas con lecturas y escrituras más recientes, y se codifica con $\texttt{pred = 0010}$ y $\texttt{suc = 0011}$. Si los argumentos son omitidos, se asume un $\texttt{fence iorw, iorw}$ completo.
+Vuelve los accesos previos a memoria e I/O en el conjunto `predecessor` observables a otros threads y dispositivos antes de que los accesos subsiguientes a memoria e I/O en el conjunto `successor` sean observables. Los bits 3, 2, 1 y 0 en estos conjuntos corresponden `device input`, `device output`,  `memory reads` y `memory writes`, respectivamente. La instrucción `fence r, rw` por ejemplo, ordena lecturas más antiguas con lecturas y escrituras más recientes, y se codifica con `pred = 0010` y `suc = 0011`. Si los argumentos son omitidos, se asume un `fence iorw, iorw` completo.
 
 * _Fence Memory and I/O_
-* **Operación**: $\texttt{Fence\(pred, succ\)}$
-* **Tipo**: $\texttt{I}$
+* **Operación**: Fence\(pred, succ\)
+* **Tipo**: I
 
 **Uso**
 
