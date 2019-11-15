@@ -19,7 +19,7 @@ add rd, rs1, rs2
 Suma el inmediato sign-extended al registro `x[rs1]` y escribe el resultado en `x[rd]`. Overflow aritmético ignorado.
 
 * _Add Immediate_
-* **Operación**: x\[rd\] = x\[rs1\] + sext\(immediate\)
+* **Operación**: x\[rd\] $$=$$ x\[rs1\] $$+$$ sext\(immediate\)
 * **Tipo**: I
 
 **Uso**
@@ -33,7 +33,7 @@ addi rd, rs1, immediate
 Calcula el AND a nivel de bits de los registros `x[rs1]` y `x[rs2]` y escribe el resultado en `x[rd]`.
 
 * _AND_
-* **Operación**: x\[rd\] = x\[rs1\] & x\[rs2\]
+* **Operación**: x\[rd\] $$=$$ x\[rs1\] $$\&$$ x\[rs2\]
 * **Tipo**: R
 
 **Uso**
@@ -47,7 +47,7 @@ and rd, rs1, rs2
 Calcula el AND a nivel de bits del inmediato sign-extended y el registro `x[rs1]` y escribe el resultado en `x[rd]`.
 
 * _AND Immediate_
-* **Operación**: x\[rd\] = x\[rs1\] & sext\(immediate\)
+* **Operación**: x\[rd\] $$=$$ x\[rs1\] $$\&$$ sext\(immediate\)
 * **Tipo**: I
 
 **Uso**
@@ -61,7 +61,7 @@ andi rd, rs1, immediate
 Suma el inmediato sign-extended de 20 bits, corrido a la izquierda por 12 bits, al `pc`, y escribe el resultado en `x[rd]`.
 
 * _AND Immediate_
-* **Operación**: x\[rd\] = pc + sext\(immediate\[31:12\] $$<<$$ 12\)
+* **Operación**: x\[rd\] $$=$$ pc $$+$$ sext\( immediate\[31:12\] $$<<$$ 12 \)
 * **Tipo**: U
 
 **Uso**
@@ -75,7 +75,7 @@ auipc rd, immediate
 Si el registro `x[rs1]` es igual al registro `x[rs2]`, asignar al `pc` su valor actual más el `offset` sign-extended.
 
 * _Branch if Equal_
-* **Operación**: if \(rs1 $$==$$ rs2\) pc $$+=$$ sext\(offset\)
+* **Operación**: if \(rs1 $$==$$ rs2\)  then pc $$+=$$ sext\(offset\)
 * **Tipo**: B
 
 **Uso**
@@ -89,7 +89,7 @@ beq rs1, rs2, offset
 Si el registro `x[rs1]` es por lo menos `x[rs2]`, tratando los valores como números de complemento a dos, asignar al `pc` su valor actual más el `offset` sign-extended.
 
 * _Branch if Greater Than or Equal_
-* **Operación**: if \(rs1 $$≥_s$$ rs2\) pc $$+=$$ sext\(offset\)
+* **Operación**: if \(rs1 $$≥_s$$ rs2\) pc $$+=$$ sext\( offset \)
 * **Tipo**: B
 
 **Uso**
@@ -103,7 +103,7 @@ bge rs1, rs2, offset
 Si el registro `x[rs1]` es por lo menos `x[rs2]`, tratando los valores como números sin signo, asignar al `pc` su valor actual más el `offset` unsign-extended.
 
 * _Branch if Greater Than or Equal, Unsigned_
-* **Operación**: if \(rs1 $$>_u$$ rs2\) pc $$+=$$ sext\(offset\)
+* **Operación**: if \(rs1 $$>_u$$ rs2\) then pc $$+=$$ sext\( offset \)
 * **Tipo**: B
 
 **Uso**
@@ -117,7 +117,7 @@ bgeu rs1, rs2, offset
 Si el registro `x[rs1]` es menor que `x[rs2]`, tratando los valores como números de complemento a dos, asignar al `pc` su valor actual más el `offset` sign-extended
 
 * _Branch if Less Than_
-* **Operación**: if \(rs1 $$<_s$$ rs2\) pc $$+=$$ sext\(offset\)
+* **Operación**: if \(rs1 $$<_s$$ rs2\) then pc $$+=$$ sext\( offset \)
 * **Tipo**: B
 
 **Uso**
@@ -131,7 +131,7 @@ blt rs1, rs2, offset
 Si el registro `x[rs1]` es menor que `x[rs2]`, tratando los valores como números sin signo, asignar al `pc` su valor actual más el `offset` unsign-extended.
 
 * _Branch if Less Than, Unsigned_
-* **Operación**: if \(rs1 $$<_u$$ rs2\) pc $$+=$$sext\(offset\)
+* **Operación**: if \(rs1 $$<_u$$ rs2\) then pc $$+=$$sext\( offset \)
 * **Tipo**: B
 
 **Uso**
@@ -145,7 +145,7 @@ bltu rs1, rs2, offset
 Si el registro `x[rs1]` no es igual al registro `x[rs2]`, asignar al `pc` su valor actual más el `offset` sign-extended.
 
 * _Branch if Not Equal_
-* **Operación**: if \(rs1 $$≠_s$$rs2\) pc $$+=$$ sext\(offset\)
+* **Operación**: if \(rs1 $$≠_s$$rs2\) then pc $$+=$$ sext\( offset \)
 * **Tipo**: B
 
 **Uso**
@@ -159,7 +159,7 @@ bne rs1, rs2, offset
 Setea en `t` el valor del control and status register `csr`. Escribe el `AND` a nivel de bits de `t` y el complemento a uno de `x[rs1]` en el `csr`, luego escribe `t` en el `x[rd]`.
 
 * _Control and Status Register Read and Clear_
-* **Operación**: t = CSRs\[csr\];  CSRs\[csr\] = t  & $$∼$$x\[rs1\];  x\[rd\] = t
+* **Operación**: t $$=$$ CSRs\[csr\];  CSRs\[csr\] $$=$$ t $$\&$$ $$∼$$x\[rs1\];  x\[rd\] $$=$$ t
 * **Tipo**: I
 
 **Uso**
@@ -173,7 +173,7 @@ csrrc rd, csr, rs1
 Setea en `t` el valor del control and status register `csr`. Escribe el `AND` a nivel de bits de `t` y el complemento a uno del inmediato de cinco bits zero-extended `zimm` en el `csr`, luego escribe `t` en el `x[rd]` \(Los bits del 5 en adelante en el csr no son modificados\).
 
 * _Control and Status Register Read and Clear Immediate_
-* **Operación**: t = CSRs\[csr\]; CSRs\[csr\] = t  & $$∼$$zimm;  x\[rd\] = t
+* **Operación**: t $$=$$ CSRs\[csr\]; CSRs\[csr\] $$=$$ t  $$\&$$ $$∼$$zimm;  x\[rd\] $$=$$ t
 * **Tipo**: I
 
 **Uso**
@@ -187,7 +187,7 @@ csrrci rd, csr, zimm[4:0]
 Setea en `t` el valor del control and status register `csr`. Escribe el `OR` a nivel de bits de `t` y `x[rs1]` en el `csr`, luego escribe `t` en el `x[rd]`.
 
 * _Control and Status Register Read and Set_
-* **Operación**: t = CSRs\[csr\];  CSRs\[csr\] = t \| x\[rs1\];  x\[rd\] = t
+* **Operación**: t $$=$$ CSRs\[csr\];  CSRs\[csr\] $$=$$ t $$|$$ x\[rs1\];  x\[rd\] $$=$$ t
 * **Tipo**: I
 
 **Uso**
@@ -201,7 +201,7 @@ csrrs rd, csr, rs1
 Setea en `t` el valor del control and status register `csr`. Escribe el `OR` a nivel de bits de `t` y y el inmediato de cinco bits zero-extended `zimm` en el `csr`, luego escribe `t` en el `x[rd]` . \(Los bits del 5 en adelante en el csr no son modificados\).
 
 * _Control and Status Register Read and Set Immediate_
-* **Operación**: t = CSRs\[csr\];  CSRs\[csr\] = t \| zimm;  x\[rd\] = t
+* **Operación**: t $$=$$ CSRs\[csr\];  CSRs\[csr\] $$=$$ t $$|$$ zimm;  x\[rd\] $$=$$ t
 * **Tipo**: I
 
 **Uso**
@@ -215,7 +215,7 @@ csrrsi rd, csr, zimm[4:0]
 Setea en `t` el valor del control and status register `csr`. Copia el valor de `x[rs1]` en el `csr`, luego escribe el valor de `t` en el `x[rd]`.
 
 * _Control and Status Register Read and Write_
-* **Operación**: t = CSRs\[csr;  CSRs\[csr\] = x\[rs1\];  x\[rd\] = t
+* **Operación**: t $$=$$ CSRs\[csr\];  CSRs\[csr\]  $$=$$ x\[rs1\];  x\[rd\] $$=$$ t
 * **Tipo**: I
 
 **Uso**
@@ -229,7 +229,7 @@ csrrw rd, csr, rs1
 Copia el valor del control and status register `csr` en `x[rd]`, luego escribe el inmediato de cinco bits zero-extended `zimm` en el `csr`.
 
 * _Control and Status Register Read and Write Immediate_
-* **Operación**: x\[rd\] = CSRs\[csr\];  CSRs\[csr\] = zimm
+* **Operación**: x\[rd\] $$=$$ CSRs\[csr\];  CSRs\[csr\] $$=$$ zimm
 * **Tipo**: I
 
 **Uso**
@@ -243,7 +243,7 @@ csrrwi rd, csr, zimm[4:0]
 Divide `x[rs1]` entre `x[rs2]`, redondeando hacia cero, tratando los valores como números de complemento a dos, y escribe el cociente en `x[rd]`.
 
 * _Divide_
-* **Operación**: x\[rd\] = x\[rs1\] $$÷_s$$ x\[rs2\]
+* **Operación**: x\[rd\] $$=$$ x\[rs1\] $$÷_s$$ x\[rs2\]
 * **Tipo**: R
 
 **Uso**
@@ -257,7 +257,7 @@ div rd, rs1, rs2
 Divide `x[rs1]` entre `x[rs2]`, redondeando hacia cero, tratando los valores como números sin signo, y escribe el cociente en `x[rd]`.
 
 * _Divide, Unsigned_
-* **Operación**: x\[rd\] = x\[rs1\] $$÷_u$$ x\[rs2\]
+* **Operación**: x\[rd\] $$=$$ x\[rs1\] $$÷_u$$ x\[rs2\]
 * **Tipo**: R
 
 **Uso**
@@ -339,7 +339,7 @@ fclass.s rd, rs1, rs2
 Convierte el entero de 32 bits de complemento a dos en `x[rs1]` en un número de punto flotante de precisión simple y lo escribe en `f[rd]`.
 
 * _Floating-point Convert to Single from Word_
-* **Operación**: f\[rd\] = f32 $$_{s32}$$ \(x\[rs1\]\)
+* **Operación**: f\[rd\] $$=$$ f32$$_{s32}$$ \( x\[rs1\] \)
 * **Tipo**: R
 
 **Uso**
@@ -353,7 +353,7 @@ fcvt.s.w rd, rs1, rs2
 Convierte el entero de 32 bits sin signo en `x[rs1]` en un número de punto flotante de precisión simple y lo escribe en `f[rd]`.
 
 * _Floating-point Convert to Single from Unsigned Word_
-* **Operación**: f\[rd\] = f32 $$_{u32}$$ \(x\[rs1\]\)
+* **Operación**: f\[rd\] $$=$$ f32$$_{u32}$$ \( x\[rs1\] \)
 * **Tipo**: R
 
 **Uso**
@@ -367,7 +367,7 @@ fcvt.s.wu rd, rs1, rs2
 Convierte el número de punto flotante de precisión simple en el registro `f[rs1]` en un entero de 32 bits de complemento a dos y escribe el resultado sign-extended en `x[rd]`.
 
 * _Floating-point Convert to Word from Single_
-* **Operación**: x\[rd\] = sext\(s32 $$_{f32}$$ \(f\[rs1\]\)\)
+* **Operación**: x\[rd\] $$=$$ sext\( s32 $$_{f32}$$ \( f\[rs1\] \) \)
 * **Tipo**: R
 
 **Uso**
@@ -381,7 +381,7 @@ fcvt.w.s rd, rs1, rs2
 Convierte el número de punto flotante de precisión simple en el registro `f[rs1]` en un entero de 32 bits sin signo y escribe el resultado sign-extended en `x[rd]`.
 
 * _Floating-point Convert to Unsigned Word from Single_
-* **Operación**: x\[rd\] = sext\(u32 $$_{f32}$$ \(f\[rs1\]\)\)
+* **Operación**: x\[rd\] $$=$$ sext\( u32$$_{f32}$$ \( f\[rs1\] \) \)
 * **Tipo**: R
 
 **Uso**
@@ -395,7 +395,7 @@ fcvt.wu.s rd, rs1, rs2
 Divide el número de punto flotante de precisión simple en el registro `f[rs1]` entre `f[rs2]` y escribe el cociente redondeado de precisión simple en `f[rd]`.
 
 * _Floating-point Divide, Single-Precision_
-* **Operación**: f\[rd\] = f\[rs1\] $$÷$$ f\[rs2\]
+* **Operación**: f\[rd\] $$=$$ f\[rs1\] $$÷$$ f\[rs2\]
 * **Tipo**: R
 
 **Uso**
@@ -467,7 +467,7 @@ Carga un número de punto flotante de precisión simple de la dirección de memo
 Formas comprimidas: **`c.flwsp`** `rd, offset`;  **`c.flw`** `rd, offset(rs1)`.
 
 * _Floating-point Load Word_
-* **Operación**: f\[rd\] $$=$$ M\[x\[rs1\]\] $$+$$ sext\(offset\)\]\[31:0\]
+* **Operación**: f\[rd\] $$=$$ M\[ x\[rs1\] $$+$$ sext\( offset \) \] \[31:0\]
 * **Tipo**: I
 
 **Uso**
@@ -495,7 +495,7 @@ fmadd.s rd, rs1, rs2, rs3
 Copia el mayor de los números de punto flotante de precisión simple de los registros `f[rs1]` y `f[rs2]` a `f[rd]`.
 
 * _Floating-point Maximum, Single-Precision_
-* **Operación**: f\[rd\] $$=$$ $$max$$ \(f\[rs1\], f\[rs2\]\)
+* **Operación**: f\[rd\] $$=$$ $$max$$\( f\[rs1\], f\[rs2\] \)
 * **Tipo**: R
 
 **Uso**
@@ -509,7 +509,7 @@ fmax.s rd, rs1, rs2
 Copia el menor de los números de punto flotante de precisión simple de los registros `f[rs1]` y `f[rs2]` a `f[rd]`.
 
 * _Floating-point Minimum, Single-Precision_
-* **Operación**: f\[rd\] $$=$$ $$min$$ \(f\[rs1\], f\[rs2\]\)
+* **Operación**: f\[rd\] $$=$$ $$min$$\( f\[rs1\], f\[rs2\] \)
 * **Tipo**: R
 
 **Uso**
@@ -565,7 +565,7 @@ fmv.w.x rd, rs1, rs2
 Copia el número de punto flotante de precisión simple en el registro `f[rs1]` a `x[rd]`, extendiendo en signo el resultado para `RV64F`.
 
 * _Floating-point Move Word to Integer_
-* **Operación**: x\[rd\] $$=$$ sext\(f\[rs1\]\[31:0\]\)
+* **Operación**: x\[rd\] $$=$$ sext\( f\[rs1\]\[31:0\] \)
 * **Tipo**: R
 
 **Uso**
@@ -725,7 +725,7 @@ jalr rd, offset(rs1)
 Carga un byte de memoria en la dirección `x[rs1] + sign-extend(offset)` y lo escribe en `x[rd]`, extendiendo en signo el resultado.
 
 * _Load Byte_
-* **Operación**: x\[rd\] $$=$$ sext\(M\[x\[rs1\] $$+$$ sext\(offset\)\]\[7:0\]\)
+* **Operación**: x\[rd\] $$=$$ sext\( M\[x\[rs1\] $$+$$ sext\(offset\)\]\[7:0\] \)
 * **Tipo**: I
 
 **Uso**
@@ -753,7 +753,7 @@ lbu rd, offset(rs1)
 Carga dos bytes de memoria en la dirección `x[rs1] + sign-extend(offset)` y los escribe en `x[rd]`, extendiendo en signo el resultado.
 
 * _Load Halfword_
-* **Operación**: x\[rd\] $$=$$ sext\(M\[x\[rs1\] $$+$$ sext\(offset\)\]\[15:0\]\)
+* **Operación**: x\[rd\] $$=$$ sext\( M\[x\[rs1\] $$+$$ sext\(offset\)\]\[15:0\] \)
 * **Tipo**: I
 
 **Uso**
@@ -783,7 +783,7 @@ Carga cuatro bytes de memoria en la dirección `x[rs1] + sign-extend(offset)` y 
 Formas comprimidas: **`c.lwsp`** `rd, offset`; **`c.lw`** `rd, offset(rs1)`
 
 * _Load Word_
-* **Operación**: x\[rd\] $$=$$ sext\(M\[x\[rs1\] $$+$$ sext\(offset\)\]\[31:0\]\)
+* **Operación**: x\[rd\] $$=$$ sext\( M\[x\[rs1\] $$+$$ sext\(offset\)\]\[31:0\] \)
 * **Tipo**: I
 
 **Uso**
@@ -868,7 +868,7 @@ mulhu rd, rs1, rs2
 
 Calcula el `OR` inclusivo a nivel de bits de los registros `x[rs1]` y `x[rs2]` y escribe el resultado en `x[rd]`. 
 
-Formas comprimidas: **`c.o`**`rd, rs2`
+Formas comprimidas: **`c.or`**`rd, rs2`
 
 * _OR_
 * **Operación**: x\[rd\] $$=$$ x\[rs1\] $$|$$ x\[rs2\]
