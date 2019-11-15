@@ -420,11 +420,11 @@ fence pred, succ
 
 ## feq.s
 
-Escribe $\texttt{1}$ en $\texttt{x\[rd\]}$ si el número de punto flotante de precisión simple en $\texttt{f\[rs1\]}$ es igual al número en $\texttt{f\[rs2\]}$, y 0 si no.
+Escribe `1` en `x[rd]` si el número de punto flotante de precisión simple en `f[rs1]` es igual al número en `f[rs2]`, y `0` si no.
 
 * _Floating-point Equals, Single-Precision_
-* **Operación**: $\texttt{x\[rd\] = f\[rs1\] == f\[rs2\]}$
-* **Tipo**: $\texttt{R}$
+* **Operación**: x\[rd\] $$=$$ f\[rs1\] $$==$$ f\[rs2\]
+* **Tipo**: R
 
 **Uso**
 
@@ -434,11 +434,11 @@ feq.s rd, rs1, rs2
 
 ## fle.s
 
-Escribe $\texttt{1}$ en $\texttt{x\[rd\]}$ si el número de punto flotante de precisión simple en $\texttt{f\[rs1\]}$ es menor o igual que el número en $\texttt{f\[rs2\]}$, y 0 si no.
+Escribe `1` en `x[rd]` si el número de punto flotante de precisión simple en `f[rs1]` es menor o igual que el número en `f[rs2]`, y `0` si no.
 
 * _Floating-point Less Than or Equal, Single-Precision_
-* **Operación**: $\texttt{x\[rd\] = f\[rs1\] ≤ f\[rs2\]}$
-* **Tipo**: $\texttt{R}$
+* **Operación**: x\[rd\] $$=$$ f\[rs1\] $$≤$$ f\[rs2\]
+* **Tipo**: R
 
 **Uso**
 
@@ -448,11 +448,11 @@ fle.s rd, rs1, rs2
 
 ## flt.s
 
-Escribe $\texttt{1}$ en $\texttt{x\[rd\]}$ si el número de punto flotante de precisión simple en $\texttt{f\[rs1\]}$ es menor que el número en $\texttt{f\[rs2\]}$, y 0 si no.
+Escribe `1` en `x[rd]` si el número de punto flotante de precisión simple en `f[rs1]` es menor que el número en `f[rs2]`, y `0` si no.
 
 * _Floating-point Less Than, Single-Precision_
-* **Operación**: $\texttt{x\[rd\] = f\[rs1\] &lt; f\[rs2\]}$
-* **Tipo**: $\texttt{R}$
+* **Operación**: x\[rd\] $$=$$ f\[rs1\] $$<$$ f\[rs2\]
+* **Tipo**: R
 
 **Uso**
 
@@ -462,11 +462,13 @@ flt.s rd, rs1, rs2
 
 ## flw
 
-Carga un número de punto flotante de precisión simple de la dirección me memoria $\texttt{x\[rs1\] + sign-extend\(offset\)}$ y lo escribe en $\texttt{f\[rd\]}$. Formas comprimidas: **$\texttt{c.flwsp}$** $\texttt{ rd, offset}$; **$\texttt{c.flw}$** $\texttt{ rd, offset\(rs1\)}$.
+Carga un número de punto flotante de precisión simple de la dirección de memoria `x[rs1] + sign-extend(offset)` y lo escribe en `f[rd]`. 
+
+Formas comprimidas: **`c.flwsp`** `rd, offset`;  **`c.flw`** `rd, offset(rs1)`.
 
 * _Floating-point Load Word_
-* **Operación**: $\texttt{f\[rd\] = M\[x\[rs1\]\] + sext\(offset\)\]\[31:0\]}$
-* **Tipo**: $\texttt{I}$
+* **Operación**: f\[rd\] $$=$$ M\[x\[rs1\]\] $$+$$ sext\(offset\)\]\[31:0\]
+* **Tipo**: I
 
 **Uso**
 
@@ -476,11 +478,11 @@ flw rd, offset(rs1)
 
 ## fmadd.s
 
-Multiplica los números de punto flotante de precisión simple en $\texttt{f\[rs1\]}$ y $\texttt{f\[rs2\]}$, suma el producto sin redondear al número de punto flotante de precisión simple en $\texttt{f\[rs3\]}$, y escribe el resultado redondeado de precisión simple en $\texttt{f\[rd\]}$.
+Multiplica los números de punto flotante de precisión simple en `f[rs1]` y `f[rs2]`, suma el producto sin redondear al número de punto flotante de precisión simple en `f[rs3]`, y escribe el resultado redondeado de precisión simple en `f[rd]`.
 
 * _Floating-point Fused Multiply-Add, Single-Precision_
-* **Operación**: $\texttt{f\[rd\] = f\[rs1\]×f\[rs2\]+f\[rs3\]}$
-* **Tipo**: $\texttt{R4}$
+* **Operación**: f\[rd\] $$=$$ f\[rs1\] $$×$$ f\[rs2\] $$+$$ f\[rs3\]
+* **Tipo**: R4
 
 **Uso**
 
@@ -490,11 +492,11 @@ fmadd.s rd, rs1, rs2, rs3
 
 ## fmax.s
 
-Copia el mayor de los números de punto flotante de precisión simple de los registros $\texttt{f\[rs1\]}$ y $\texttt{f\[rs2\]}$ a $\texttt{f\[rd\]}$.
+Copia el mayor de los números de punto flotante de precisión simple de los registros `f[rs1]` y `f[rs2]` a `f[rd]`.
 
 * _Floating-point Maximum, Single-Precision_
-* **Operación**: $\texttt{f\[rd\] = max\(f\[rs1\], f\[rs2\]\)}$
-* **Tipo**: $\texttt{R}$
+* **Operación**: f\[rd\] $$=$$ $$max$$ \(f\[rs1\], f\[rs2\]\)
+* **Tipo**: R
 
 **Uso**
 
@@ -504,11 +506,11 @@ fmax.s rd, rs1, rs2
 
 ## fmin.s
 
-Copia el menor de los números de punto flotante de precisión simple de los registros $\texttt{f\[rs1\]}$ y $\texttt{f\[rs2\]}$ a $\texttt{f\[rd\]}$.
+Copia el menor de los números de punto flotante de precisión simple de los registros `f[rs1]` y `f[rs2]` a `f[rd]`.
 
 * _Floating-point Minimum, Single-Precision_
-* **Operación**: $\texttt{f\[rd\] = min\(f\[rs1\], f\[rs2\]\)}$
-* **Tipo**: $\texttt{R}$
+* **Operación**: f\[rd\] $$=$$ $$min$$ \(f\[rs1\], f\[rs2\]\)
+* **Tipo**: R
 
 **Uso**
 
@@ -518,11 +520,11 @@ fmin.s rd, rs1, rs2
 
 ## fmsub.s
 
-Multiplica los números de punto flotante de precisión simple en $\texttt{f\[rs1\]}$ y $\texttt{f\[rs2\]}$, resta el número de punto flotante de precisión simple en $\texttt{f\[rs3\]}$ del producto sin redondear, y escribe el resultado redondeado de precisión simple en $\texttt{f\[rd\]}$.
+Multiplica los números de punto flotante de precisión simple en `f[rs1]` y `f[rs2]`, resta el número de punto flotante de precisión simple en `f[rs3]` del producto sin redondear, y escribe el resultado redondeado de precisión simple en `f[rd]`.
 
 * _Floating-point Fused Multiply-Subtract, Single-Precision_
-* **Operación**: $\texttt{f\[rd\] = f\[rs1\]×f\[rs2\]-f\[rs3\]}$
-* **Tipo**: $\texttt{R4}$
+* **Operación**: f\[rd\] $$=$$ f\[rs1\] $$×$$ f\[rs2\] $$-$$ f\[rs3\]
+* **Tipo**: R4
 
 **Uso**
 
@@ -532,11 +534,11 @@ fmsub.s rd, rs1, rs2
 
 ## fmul.s
 
-Multiplica los números de punto flotante de precisión simple en los registros $\texttt{f\[rs1\]}$ y $\texttt{f\[rs2\]}$ y escribe el producto redondeado de precisión simple en $\texttt{f\[rd\]}$.
+Multiplica los números de punto flotante de precisión simple en los registros `f[rs1]` y `f[rs2]` y escribe el producto redondeado de precisión simple en `f[rd]`.
 
 * _Floating-point Multiply, Single-Precision_
-* **Operación**: $\texttt{f\[rd\] = f\[rs1\] × f\[rs2\]}$
-* **Tipo**: $\texttt{R}$
+* **Operación**: f\[rd\] $$=$$ f\[rs1\] $$×$$ f\[rs2\]
+* **Tipo**: R
 
 **Uso**
 
@@ -546,11 +548,11 @@ fmul.s rd, rs1, rs2
 
 ## fmv.w.x
 
-Copia el número de punto flotante de precisión simple en el registro $\texttt{x\[rs1\]}$ a $\texttt{f\[rd\]}$.
+Copia el número de punto flotante de precisión simple en el registro `x[rs1]` a `f[rd]`.
 
 * _Floating-point Move Word from Integer_
-* **Operación**: $\texttt{f\[rd\] = x\[rs1\]\[31:0\]}$
-* **Tipo**: $\texttt{R}$
+* **Operación**: f\[rd\] $$=$$ x\[rs1\]\[31:0\]
+* **Tipo**: R
 
 **Uso**
 
@@ -560,11 +562,11 @@ fmv.w.x rd, rs1, rs2
 
 ## fmv.x.w
 
-Copia el número de punto flotante de precisión simple en el registro $\texttt{f\[rs1\]}$ a $\texttt{x\[rd\]}$\], extendiendo en signo el resultado para $\texttt{RV64F}$.
+Copia el número de punto flotante de precisión simple en el registro `f[rs1]` a `x[rd]`, extendiendo en signo el resultado para `RV64F`.
 
 * _Floating-point Move Word to Integer_
-* **Operación**: $\texttt{x\[rd\] = sext\(f\[rs1\]\[31:0\]\)}$
-* **Tipo**: $\texttt{R}$
+* **Operación**: x\[rd\] $$=$$ sext\(f\[rs1\]\[31:0\]\)
+* **Tipo**: R
 
 **Uso**
 
@@ -574,11 +576,11 @@ fmv.x.w rd, rs1, rs2
 
 ## fnmadd.s
 
-Multiplica los números de punto flotante de precisión simple en $\texttt{f\[rs1\]}$ y $\texttt{f\[rs2\]}$, niega el resultado, resta el número de punto flotante de precisión simple en $\texttt{f\[rs3\]}$ del producto sin redondear, y escribe el resultado redondeado de precisión simple en $\texttt{f\[rd\]}$.
+Multiplica los números de punto flotante de precisión simple en `f[rs1]` y `f[rs2]`, niega el resultado, suma el número de punto flotante de precisión simple en `f[rs3]` del producto sin redondear, y escribe el resultado redondeado de precisión simple en `f[rd]`.
 
 * _Floating-point Fused Negative Multiply-Add, Single-Precision_
-* **Operación**: $\texttt{f\[rd\] = -f\[rs1\]×f\[rs2\]-f\[rs3\]}$
-* **Tipo**: $\texttt{R4}$
+* **Operación**: f\[rd\] $$=$$ $$∼$$ f\[rs1\] $$×$$ f\[rs2\] $$+$$ f\[rs3\]
+* **Tipo**: R4
 
 **Uso**
 
@@ -588,11 +590,11 @@ fnmadd.s rd, rs1, rs2, rs3
 
 ## fnmsub.s
 
-Multiplica los números de punto flotante de precisión simple en $\texttt{f\[rs1\]}$ y $\texttt{f\[rs2\]}$, niega el resultado, suma el producto sin redondear al número de punto flotante de precisión simple en $\texttt{f\[rs3\]}$, y escribe el resultado redondeado de precisión simple en $\texttt{f\[rd\]}$.
+Multiplica los números de punto flotante de precisión simple en `f[rs1]` y `f[rs2]`, niega el resultado, resta el producto sin redondear al número de punto flotante de precisión simple en `f[rs3]`, y escribe el resultado redondeado de precisión simple en `f[rd]`.
 
 * _Floating-point Fused Negative Multiply-Subtract, Single-Precision_
-* **Operación**: $\texttt{f\[rd\] = -f\[rs1\]×f\[rs2\]+f\[rs3\]}$
-* **Tipo**: $\texttt{R4}$
+* **Operación**: f\[rd\] = $$∼$$ f\[rs1\] $$×$$ f\[rs2\] $$-$$ f\[rs3\]
+* **Tipo**: R4
 
 **Uso**
 
@@ -602,11 +604,11 @@ fnmsub.s rd, rs1, rs2, rs3
 
 ## fsgnj.s
 
-Construye un nuevo número de punto flotante de precisión simple del exponente y significando de $\texttt{f\[rs1\]}$ tomando el signo de $\texttt{f\[rs2\]}$\], y lo escribe en $\texttt{f\[rd\]}$.
+Construye un nuevo número de punto flotante de precisión simple del exponente y significando de `f[rs1]` tomando el signo de `f[rs2]`, y lo escribe en `f[rd]`.
 
 * _Floating-point Sign Inject, Single-Precision_
-* **Operación**: $\texttt{f\[rd\] = }${$\texttt{f\[rs2\]\[31\], f\[rs1\]\[30:0\]}$}
-* **Tipo**: $\texttt{R}$
+* **Operación**: f\[rd\] $$=$$ { f\[rs2\]\[31\], f\[rs1\]\[30:0\] }
+* **Tipo**: R
 
 **Uso**
 
@@ -616,14 +618,11 @@ fsgnj.s rd, rs1, rs2
 
 ## fsgnjn.s
 
-Construye un nuevo número de punto flotante de precisión simple del exponente y significando de $\texttt{f\[rs1\]}$ tomando el signo opuesto de $\texttt{f\[rs2\]}$\], y lo escribe en $\texttt{f\[rd\]}$.
+Construye un nuevo número de punto flotante de precisión simple del exponente y significando de `f[rs1]` tomando el signo opuesto de `f[rs2]`, y lo escribe en `f[rd]`.
 
 * _Floating-point Sign Inject-Negate, Single-Precision_
-* **Operación**:
-
-  $\texttt{f\[rd\] = }${$\texttt{∼f\[rs2\]\[31\], f\[rs1\]\[30:0\]}$}
-
-* **Tipo**: $\texttt{R}$
+* **Operación**: f\[rd\] = { $$∼$$f\[rs2\]\[31\], f\[rs1\]\[30:0\] }
+* **Tipo**: R
 
 **Uso**
 
@@ -633,14 +632,11 @@ fsgnjn.s rd, rs1, rs2
 
 ## fsgnjx.s
 
-Construye un nuevo número de punto flotante de precisión simple del exponente y significando de $\texttt{f\[rs1\]}$ tomando el signo del XOR de los signos de $\texttt{f\[rs1\]}$ y $\texttt{f\[rs2\]}$\], y lo escribe en $\texttt{f\[rd\]}$.
+Construye un nuevo número de punto flotante de precisión simple del exponente y significando de `f[rs1]` tomando el signo del `XOR` de los signos de `f[rs1]` y `f[rs2]`, y lo escribe en `f[rd]`.
 
 * _Floating-point Sign Inject-XOR, Single-Precision_
-* **Operación**:
-
-  $\texttt{f\[rd\] = }${$\texttt{f\[rs1\]\[31\] ˆ f\[rs2\]\[31\], f\[rs1\]\[30:0\]}$}
-
-* **Tipo**: $\texttt{R}$
+* **Operación**: f\[rd\] $$=$$ { f\[rs1\]\[31\] $$ˆ$$ f\[rs2\]\[31\],  f\[rs1\]\[30:0\] }
+* **Tipo**: R
 
 **Uso**
 
@@ -650,11 +646,11 @@ fsgnjx.s rd, rs1, rs2
 
 ## fsqrt.s
 
-Calcula la raíz cuadrada del número de punto flotante de precisión doble en el registro $\texttt{f\[rs1\]}$ y escribe el resultado redondeado de precisión simple en $\texttt{f\[rd\]}$.
+Calcula la raíz cuadrada del número de punto flotante de precisión doble en el registro `f[rs1]` y escribe el resultado redondeado de precisión simple en `f[rd]`.
 
 * _Floating-point Square Root, Single-Precision_
-* **Operación**: $\texttt{f\[rd\] = }$ $\sqrt{\texttt{f\[rs1\]}}$
-* **Tipo**: $\texttt{R}$
+* **Operación**: f\[rd\] $$=$$  $$sqrt$${ f\[rs1\] }
+* **Tipo**: R
 
 **Uso**
 
@@ -664,11 +660,11 @@ fsqrt.s rd, rs1, rs2
 
 ## fsub.s
 
-Resta el número de punto flotante de precisión simple en el registro $\texttt{f\[rs2\]}$ de $\texttt{f\[rs1\]}$ y escribe la diferencia de precisión simple en $\texttt{f\[rd\]}$.
+Resta el número de punto flotante de precisión simple en el registro `f[rs2]` de `f[rs1]` y escribe la diferencia de precisión simple en `f[rd]`.
 
 * _Floating-point Subtract, Single-Precision_
-* **Operación**: $\texttt{f\[rd\] = f\[rs1\] - f\[rs2\]}$
-* **Tipo**: $\texttt{R}$
+* **Operación**: f\[rd\] $$=$$ f\[rs1\] $$-$$ f\[rs2\]
+* **Tipo**: R
 
 **Uso**
 
@@ -678,11 +674,13 @@ fsub.s rd, rs1, rs2
 
 ## fsw
 
-Almacena el número de punto flotante de precisión simple del registro $\texttt{f\[rs2\]}$ a memoria en la dirección $\texttt{x\[rs1\] + sign-extend\(offset\)}$. Formas comprimidas: **$\texttt{c.fswsp}$** $\texttt{ rs2, offset}$; **$\texttt{c.fsw}$** $\texttt{ rs2, offset\(rs1\)}$.
+Almacena el número de punto flotante de precisión simple del registro `f[rs2]` a memoria en la dirección `x[rs1] + sign-extend(offset)`. 
+
+Formas comprimidas: **`c.fswsp`**  `rs2, offset`; **`c.fsw`**`rs2, offset(rs1)`.
 
 * _Floating-point Store Word_
-* **Operación**: $\texttt{M\[x\[rs1\] + sext\(offset\)\] = f\[rs2\]\[31:0\]}$
-* **Tipo**: $\texttt{S}$
+* **Operación**: M\[x\[rs1\] $$+$$ sext\(offset\)\] $$=$$ f\[rs2\]\[31:0\]
+* **Tipo**: S
 
 **Uso**
 
@@ -692,11 +690,13 @@ fsw rs2, offset(rs1)
 
 ## jal
 
-Escribe la dirección de la siguiente instrucción $\texttt{\(pc+4\)}$ en $\texttt{x\[rd\]}$, luego asigna al $\texttt{pc}$ su valor actual más el $\texttt{offset}$ extendido en signo. Si $\texttt{rd}$ es omitido, se asume $\texttt{x1}$. Formas comprimidas: **$\texttt{c.j}$** $\texttt{ offset}$; **$\texttt{c.jal}$** $\texttt{ offset}$.
+Escribe la dirección de la siguiente instrucción `pc+4` en `x[rd]`, luego asigna al `pc` su valor actual más el `offset` extendido en signo. Si `rd` es omitido, se asume `x1`. 
+
+Formas comprimidas: **`c.j`** `offset`; **`c.jal`** `offset`.
 
 * _Jump and Link_
-* **Operación**: $\texttt{x\[rd\] = pc+4}$; $\texttt{pc += sext\(offset\)}$
-* **Tipo**: $\texttt{J}$
+* **Operación**: x\[rd\] $$=$$ pc $$+$$ 4; pc $$+=$$ sext\(offset\)
+* **Tipo**: J
 
 **Uso**
 
@@ -706,11 +706,13 @@ jal rd, offset
 
 ## jalr
 
-Escribe $\texttt{x\[rs1\] + sign-extend\(offset\)}$ al $\texttt{pc}$, enmascarando a cero el bit menos significativo de la dirección calculada, luego escribe el valor previo del $\texttt{pc+4}$ en $\texttt{x\[rd\]}$. Si $\texttt{rd}$ es omitido, se asume $\texttt{x1}$. Formas comprimidas: **$\texttt{c.jr}$** $\texttt{ rs1}$; **$\texttt{c.jalr}$** $\texttt{ rs1}$.
+Escribe `x[rs1] + sign-extend(offset)` al `pc`, enmascarando a cero el bit menos significativo de la dirección calculada, luego escribe el valor previo del `pc+4` en `x[rd]`. Si `rd` es omitido, se asume `x1`. 
+
+Formas comprimidas: **`c.jr`** `rs1`; **`c.jalr`** `rs1`.
 
 * _Jump and Link Register_
-* **Operación**: $\texttt{t =pc+4}$; $\texttt{pc=\(x\[rs1\]+sext\(offset\)\)}$ & $\texttt{∼1}$; $\texttt{x\[rd\]=t}$
-* **Tipo**: $\texttt{I}$
+* **Operación**: t $$=$$ pc $$+$$ 4; pc $$=$$ \(x\[rs1\] $$+$$ sext\(offset\)\) &  $$∼$$1; x\[rd\] $$=$$ t
+* **Tipo**: I
 
 **Uso**
 
@@ -720,11 +722,11 @@ jalr rd, offset(rs1)
 
 ## lb
 
-Carga un byte de memoria en la dirección $\texttt{x\[rs1\] + sign-extend\(offset\)}$ y lo escribe en $\texttt{x\[rd\]}$, extendiendo en signo el resultado.
+Carga un byte de memoria en la dirección `x[rs1] + sign-extend(offset)` y lo escribe en `x[rd]`, extendiendo en signo el resultado.
 
 * _Load Byte_
-* **Operación**: $\texttt{x\[rd\] = sext\(M\[x\[rs1\] + sext\(offset\)\]\[7:0\]\)}$
-* **Tipo**: $\texttt{I}$
+* **Operación**: x\[rd\] $$=$$ sext\(M\[x\[rs1\] $$+$$ sext\(offset\)\]\[7:0\]\)
+* **Tipo**: I
 
 **Uso**
 
@@ -734,11 +736,11 @@ lb rd, offset(rs1)
 
 ## lbu
 
-Carga un byte de memoria en la dirección $\texttt{x\[rs1\] + sign-extend\(offset\)}$ y lo escribe en $\texttt{x\[rd\]}$, extendiendo con cero el resultado.
+Carga un byte de memoria en la dirección `x[rs1] + sign-extend(offset)` y lo escribe en `x[rd]`, extendiendo con cero el resultado.
 
 * _Load Byte, Unsigned_
-* **Operación**: $\texttt{x\[rd\] = M\[x\[rs1\] + sext\(offset\)\]\[7:0\]}$
-* **Tipo**: $\texttt{I}$
+* **Operación**: x\[rd\] $$=$$ M\[x\[rs1\] $$+$$ sext\(offset\)\]\[7:0\]
+* **Tipo**: I
 
 **Uso**
 
@@ -748,11 +750,11 @@ lbu rd, offset(rs1)
 
 ## lh
 
-Carga dos bytes de memoria en la dirección $\texttt{x\[rs1\] + sign-extend\(offset\)}$ y los escribe en $\texttt{x\[rd\]}$, extendiendo en signo el resultado.
+Carga dos bytes de memoria en la dirección `x[rs1] + sign-extend(offset)` y los escribe en `x[rd]`, extendiendo en signo el resultado.
 
 * _Load Halfword_
-* **Operación**: $\texttt{x\[rd\] = sext\(M\[x\[rs1\] + sext\(offset\)\]\[15:0\]\)}$
-* **Tipo**: $\texttt{I}$
+* **Operación**: x\[rd\] $$=$$ sext\(M\[x\[rs1\] $$+$$ sext\(offset\)\]\[15:0\]\)
+* **Tipo**: I
 
 **Uso**
 
@@ -762,11 +764,11 @@ lh rd, offset(rs1)
 
 ## lhu
 
-Carga dos bytes de memoria en la dirección $\texttt{x\[rs1\] + sign-extend\(offset\)}$ y los escribe en $\texttt{x\[rd\]}$, extendiendo con cero el resultado.
+Carga dos bytes de memoria en la dirección `x[rs1] + sign-extend(offset)` y los escribe en `x[rd]`, extendiendo con cero el resultado.
 
 * _Load Halfword, Unsigned_
-* **Operación**: $\texttt{x\[rd\] = M\[x\[rs1\] + sext\(offset\)\]\[15:0\]}$
-* **Tipo**: $\texttt{I}$
+* **Operación**: x\[rd\] $$=$$ M\[x\[rs1\] $$+$$ sext\(offset\)\]\[15:0\]
+* **Tipo**: I
 
 **Uso**
 
@@ -776,11 +778,13 @@ lhu rd, offset(rs1)
 
 ## lw
 
-Carga cuatro bytes de memoria en la dirección $\texttt{x\[rs1\] + sign-extend\(offset\)}$ y los escribe en $\texttt{x\[rd\]}$. Para $\texttt{RV64I}$, el resultado es extendido en signo. Formas comprimidas: **$\texttt{c.lwsp}$** $\texttt{ rd, offset}$; **$\texttt{c.lw}$** $\texttt{ rd, offset\(rs1\)}$
+Carga cuatro bytes de memoria en la dirección `x[rs1] + sign-extend(offset)` y los escribe en `x[rd]`. Para `RV64I`, el resultado es extendido en signo. 
+
+Formas comprimidas: **`c.lwsp`** `rd, offset`; **`c.lw`** `rd, offset(rs1)`
 
 * _Load Word_
-* **Operación**: $\texttt{x\[rd\] = sext\(M\[x\[rs1\] + sext\(offset\)\]\[31:0\]\)}$
-* **Tipo**: $\texttt{I}$
+* **Operación**: x\[rd\] $$=$$ sext\(M\[x\[rs1\] $$+$$ sext\(offset\)\]\[31:0\]\)
+* **Tipo**: I
 
 **Uso**
 
@@ -790,11 +794,13 @@ lw rd, offset(rs1)
 
 ## lui
 
-Escribe el $\texttt{inmediato}$ de 20 bits extendido en signo, corrido a la izquierda por 12 bits, en $\texttt{x\[rd\]}$, volviendo cero los 12 bits más bajos. Formas comprimidas: **$\texttt{c.lui}$** $\texttt{ rd, imm}$
+Escribe el `inmediato` de 20 bits extendido en signo, corrido a la izquierda por 12 bits, en `x[rd]`, volviendo cero los 12 bits más bajos. 
+
+Formas comprimidas: **`c.lui`** `rd, imm`
 
 * _Load Upper Immediate_
-* **Operación**: $\texttt{x\[rd\] = sext\(immediate\[31:12\] &lt;&lt; 12\)}$
-* **Tipo**: $\texttt{I}$
+* **Operación**: x\[rd\] $$=$$ sext\(immediate\[31:12\] $$<<$$ 12\)
+* **Tipo**: I
 
 **Uso**
 
